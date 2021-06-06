@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="kr" id="html">
+<head>
+    <script type="text/javascript" src="all.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YHMS 타임테이블</title>
+    <link rel="stylesheet" href="css.css">
+    <style>
+        select {
+            -webkit-appearance: none;
+            text-align: center;
+        }
+    </style>
+    <script>
+        //쿠키관련 스크립트
+        function setCookie(name, value, exp) {
+            //alert('set' + name);
+            var date = new Date();
+            date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+            document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+        }
+        function getCookie(name) {
+            //alert('get' + name);
+            var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+            return value ? value[2] : null;
+        }
+        function deleteCookie(name) {
+            //alert('del' + name);
+            document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+        }
+        if (getCookie('beta') == 1) {
+            location.replace('https://chicken-moo.com/yhms/beta');
+        }
+        function goBeta() {
+            deleteCookie('beta');
+            setCookie('beta', 1, 1000);
+            location.replace('https://chicken-moo.com/yhms/beta');
+        }
+    </script>
+</head>
+<body link="black" alink="black" vlink="black">
+    <img src="sum.png" height=0 width=0 />
+    <br />
+    <br />
+    <a href="https://chicken-moo.com/" target="_blank"><img src="search.svg" height=50></a>
+    <img src="x.png" height=50 class="x">
+    <a href="http://school.busanedu.net/yongho-m/main.do" target="_blank"><img src="school_logo.jpg" height=50></a>
+    <br />
+    <br />
+    <a class="tit">YHMS 타임테이블</a>
+    <br />
+    <br />
+    <a id="today" class="sigan"></a>
+
+    <a class="sigan">이동하기</a>
+    <br />
+
+    <br />
+
+    <select class="inp" id="hak" onchange="goto();">
+        <option value="학년">&nbsp;학년</option>
+        <option value="1">&nbsp;1학년</option>
+        <option value="2">&nbsp;2학년</option>
+        <option value="3">&nbsp;3학년</option>
+    </select>
+    <select class="inp" id="ban" onchange="goto();">
+        <option value="반">&nbsp;반</option>
+        <option value="1">&nbsp;1반</option>
+        <option value="2">&nbsp;2반</option>
+        <option value="3">&nbsp;3반</option>
+        <option value="4">&nbsp;4반</option>
+        <option value="5">&nbsp;5반</option>
+        <option value="6">&nbsp;6반</option>
+        <option value="7">&nbsp;7반</option>
+        <option value="8">&nbsp;8반</option>
+    </select>
+    <br />
+    <br />
+    <a href="javascript:goBeta();">베타 버전 사용해보기</a>
+    
+    <br />
+    <br />
+    <a class="sans" style="color:crimson;">※ 본인 외의 반 수업에 들어가면 불이익이 있을 수 있습니다 ※</a>
+    <br />
+    <a class="sans">Copyright ⓒ </a>
+    <a href="https://chicken-moo.com/" class="sans" target="_blank">chicken-moo.com</a>
+    <a class="sans">Jeamin0927 All right reserved</a>
+    <br /><br />
+    <a id="ttmm"></a>
+    <script type="text/javascript" src="data.js"></script>
+    <script>
+        console.log("메이드 바이 잼민");
+        function goto() {
+            var hak = document.getElementById('hak').value;
+            var ban = document.getElementById('ban').value;
+            if (hak != '학년' && ban != '반') {
+                document.getElementById('hak').value = '학년';
+                document.getElementById('ban').value = '반';
+                location.href = './table?g=' + hak + '&b=' + ban;
+            }
+        }
+    </script>
+</body>
+</html>

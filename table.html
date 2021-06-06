@@ -1,0 +1,347 @@
+﻿<!DOCTYPE html>
+<html lang="kr" id="html" class="html">
+<head>
+    <script type="text/javascript" src="all.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YongHo Time Table</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body link="black" alink="black" vlink="black" id="bod">
+    <img src="sum.png" height=0 width=0 />
+    <br />
+    <br />
+    <a href="https://chicken-moo.com/" target="_blank"><img src="search.svg" height=50></a>
+    <img src="x.png" height=50 class="x">
+    <a href="http://school.busanedu.net/yongho-m/main.do" target="_blank"><img src="school_logo.jpg" height=50></a>
+    <br />
+    <br />
+    <a class="tit" href="javascript:location.href = './';" id="db"></a>
+    <br />
+    <br />
+    <br />
+    <div id="tmtb">
+        <table border="0" class="tt1" style="width: 100%; width: 360px;">
+            <tr>
+                <td class="tp"><a id="day_pre" class="sgg" href="javascript:too(-1);"><</a></td>
+                <td class="tp"><a id="tomo_mon" class="sigan" href="javascript:to_day();"></a></td>
+                <td class="tp" style="width: 20px;"><a class="sigan" href="javascript:to_day();">/</a></td>
+                <td class="tp"><a id="tomo_day" class="sigan" href="javascript:to_day();"></a></td>
+                <td class="tp" style="text-align: right;"><a id="tomo_date" class="sigan" href="javascript:to_day();"></a></td>
+                <td class='tp' style="width: 60px; text-align: left;"><a class="sigan" href="javascript:to_day();">요일</a></td>
+                <td class="tp"><a id="day_next" class="sgg" href="javascript:too(1);">></a></td>
+            </tr>
+        </table>
+    </div>
+    <br />
+    <br />
+    <div>
+        <a class="sigan" name="tg">시간표</a>
+        <a class="sigan" style="color: rgba(0, 0, 0, 0.4); font-size: 30px;">&nbsp;|&nbsp;</a>
+        <a class="sigan" name="tg">급식</a>
+        <a class="sigan" style="color: rgba(0, 0, 0, 0.4); font-size: 30px;">&nbsp;|&nbsp;</a>
+        <a class="sigan" name="tg">큰단위</a>
+        <a class="sigan" style="color: rgba(0, 0, 0, 0.4); font-size: 30px;">&nbsp;|&nbsp;</a>
+        <a class="sigan" name="tg">설정</a>
+        <br />
+        <div name="sp">
+            <a class="sig" id="mm"></a>
+            <table border="0" class="tt" id="tablem">
+                <tr class="joy">
+                    <td id="m11"><a class="joy" href="javascript:copy(1)">1</a></td>
+                    <td id="m22"><a class="joy" href="javascript:copy(2)">2</a></td>
+                    <td id="m33"><a class="joy" href="javascript:copy(3)">3</a></td>
+                    <td id="m44"><a class="joy" href="javascript:copy(4)">4</a></td>
+                    <td id="m55"><a class="joy" href="javascript:copy(5)">5</a></td>
+                    <td id="m66"><a class="joy" href="javascript:copy(6)">6</a></td>
+                    <td id="m77"><a class="joy" href="javascript:copy(7)">7</a></td>
+                </tr>
+                <tr class="sig">
+                    <td id="m1"><a id="ss1" class="sig" href="javascript:copy(1)"></a></td>
+                    <td id="m2"><a id="ss2" class="sig" href="javascript:copy(2)"></a></td>
+                    <td id="m3"><a id="ss3" class="sig" href="javascript:copy(3)"></a></td>
+                    <td id="m4"><a id="ss4" class="sig" href="javascript:copy(4)"></a></td>
+                    <td id="m5"><a id="ss5" class="sig" href="javascript:copy(5)"></a></td>
+                    <td id="m6"><a id="ss6" class="sig" href="javascript:copy(6)"></a></td>
+                    <td id="m7"><a id="ss7" class="sig" href="javascript:copy(7)"></a></td>
+                </tr>
+            </table>
+        </div>
+        <div name="sp">
+            <a class="sig" id="gup"></a>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+            <script>
+                function getParam(sname) {
+                    var params = location.search.substr(location.search.indexOf("?") + 1);
+                    var sval = "";
+                    params = params.split("&");
+                    for (var i = 0; i < params.length; i++) {
+                        temp = params[i].split("=");
+                        if ([temp[0]] == sname) { sval = temp[1]; }
+                    }
+                    return sval;
+                }
+                var tdyp = new Date();
+                var yspp = tdyp.getFullYear(); // 년도
+                var mspp = tdyp.getMonth() + 1;  // 월
+                var dspp = tdyp.getDate();  // 날짜
+                function dat(ysp, msp, dsp) {
+                    console.log(ysp, msp, dsp);
+                    if (msp < 10) {
+                        msp = '0' + String(msp);
+                    }
+                    if (dsp < 10) {
+                        dsp = '0' + String(dsp);
+                    }
+                    var dtt = String(ysp) + String(msp) + String(dsp);
+                    //var dtt = '20210512';
+                    var link = "https://open.neis.go.kr/hub/mealServiceDietInfo?KEY=3105e38da12c40d6ae84b15a5cfb85b4&Type=json&ATPT_OFCDC_SC_CODE=C10&SD_SCHUL_CODE=7181097&MMEAL_SC_CODE=2&MLSV_YMD=" + dtt;
+                    var diat;
+                    function loadJSON(callback) {
+                        var xobj = new XMLHttpRequest();
+                        xobj.overrideMimeType("application/json");
+                        xobj.open('GET', link, true); //'data.json' is the relative path of the .json file
+                        xobj.onreadystatechange = function () {
+                            if (xobj.readyState == 4 && xobj.status == "200") {
+                                callback(xobj.responseText);
+                            }
+                        };
+                        xobj.send(null);
+                    }
+                    (function () {
+                        loadJSON(function (response) {
+                            var actual_JSON = JSON.parse(response); //Now you can use the actual_JSON variable to build your table
+                            diat = JSON.stringify(actual_JSON, null, 2);
+                            //console.log(diat);
+                            var spt = diat.split('"');
+                            //console.log(spt);
+                            if (spt[9] == '해당하는 데이터가 없습니다.') {
+                                if (document.getElementById('mm').innerHTML == '수업 없는 날!') {
+                                    document.getElementById('gup').innerHTML = '수업 없는 날!';
+                                }
+                                else {
+                                    document.getElementById('gup').innerHTML = '데이터가 없습니다.';
+                                }
+                            }
+                            else {
+                                var vsgs = spt[53];
+                                //console.log(vsgs);
+                                vsgs = vsgs.replace(/1/gi, '');
+                                vsgs = vsgs.replace(/2/gi, '');
+                                vsgs = vsgs.replace(/3/gi, '');
+                                vsgs = vsgs.replace(/4/gi, '');
+                                vsgs = vsgs.replace(/5/gi, '');
+                                vsgs = vsgs.replace(/6/gi, '');
+                                vsgs = vsgs.replace(/7/gi, '');
+                                vsgs = vsgs.replace(/8/gi, '');
+                                vsgs = vsgs.replace(/9/gi, '');
+                                vsgs = vsgs.replace(/0/gi, '');
+                                vsgs = vsgs.replace(/\//g, ' ');
+                                vsgs = vsgs.replace(/\./g, '');
+                                console.log(vsgs);
+                                document.getElementById('gup').innerHTML = vsgs;
+                            }
+
+                        });
+                    })()
+                    loadJSON('DDISH_NM');
+                }
+                dat(yspp, mspp, dspp);
+            </script>
+        </div>
+        <div name="sp">
+            <table border="0" class="tt">
+                <tr>
+                    <td class="tim1"><a class="joy">등교&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="d1" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="dd1" name="end">-</a></td>
+                </tr>
+                <tr>
+                    <td class="tim1"><a class="joy">조례&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="ddd1" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="dddd1" name="end">-</a></td>
+                </tr>
+                <tr>
+                    <td class="tim1"><a class="joy">1교시&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="sss1" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="ssss1" name="end">-</a></td>
+                </tr>
+                <tr>
+                    <td class="tim1"><a class="joy">2교시&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="sss2" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="ssss2" name="end">-</a></td>
+                </tr>
+                <tr>
+                    <td class="tim1"><a class="joy">3교시&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="sss3" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="ssss3" name="end">-</a></td>
+                </tr>
+                <tr>
+                    <td class="tim1"><a class="joy">4교시&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="sss4" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="ssss4" name="end">-</a></td>
+                </tr>
+                <tr>
+                    <td class="tim1"><a class="joy">5교시&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="sss5" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="ssss5" name="end">-</a></td>
+                </tr>
+                <tr>
+                    <td class="tim1"><a class="joy">6교시&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="sss6" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="ssss6" name="end">-</a></td>
+                </tr>
+                <tr>
+                    <td class="tim1"><a class="joy">7교시&nbsp;</a></td>
+                    <td class="tim"><a class="sig" id="sss7" name="start">-</a></td>
+                    <td class="tim"><a class="sig" id="ssss7" name="end">-</a></td>
+                </tr>
+            </table>
+            <br />
+            <br />
+            <br />
+            <table border="0" class="tt">
+                <tr class="joy">
+                    <td><a class="joy">월</a></td>
+                    <td><a class="joy">화</a></td>
+                    <td><a class="joy">수</a></td>
+                    <td><a class="joy">목</a></td>
+                    <td><a class="joy">금</a></td>
+                </tr>
+                <tr class="sig">
+                    <td><a class="sig" id="11">-</a></td>
+                    <td><a class="sig" id="21">-</a></td>
+                    <td><a class="sig" id="31">-</a></td>
+                    <td><a class="sig" id="41">-</a></td>
+                    <td><a class="sig" id="51">-</a></td>
+                </tr>
+                <tr class="sig">
+                    <td><a class="sig" id="12">-</a></td>
+                    <td><a class="sig" id="22">-</a></td>
+                    <td><a class="sig" id="32">-</a></td>
+                    <td><a class="sig" id="42">-</a></td>
+                    <td><a class="sig" id="52">-</a></td>
+                </tr>
+                <tr class="sig">
+                    <td><a class="sig" id="13">-</a></td>
+                    <td><a class="sig" id="23">-</a></td>
+                    <td><a class="sig" id="33">-</a></td>
+                    <td><a class="sig" id="43">-</a></td>
+                    <td><a class="sig" id="53">-</a></td>
+                </tr>
+                <tr class="sig">
+                    <td><a class="sig" id="14">-</a></td>
+                    <td><a class="sig" id="24">-</a></td>
+                    <td><a class="sig" id="34">-</a></td>
+                    <td><a class="sig" id="44">-</a></td>
+                    <td><a class="sig" id="54">-</a></td>
+                </tr>
+                <tr class="sig">
+                    <td><a class="sig" id="15">-</a></td>
+                    <td><a class="sig" id="25">-</a></td>
+                    <td><a class="sig" id="35">-</a></td>
+                    <td><a class="sig" id="45">-</a></td>
+                    <td><a class="sig" id="55">-</a></td>
+                </tr>
+                <tr class="sig">
+                    <td><a class="sig" id="16">-</a></td>
+                    <td><a class="sig" id="26">-</a></td>
+                    <td><a class="sig" id="36">-</a></td>
+                    <td><a class="sig" id="46">-</a></td>
+                    <td><a class="sig" id="56">-</a></td>
+                </tr>
+                <tr class="sig">
+                    <td><a class="sig" id="17">-</a></td>
+                    <td><a class="sig" id="27">-</a></td>
+                    <td><a class="sig" id="37">-</a></td>
+                    <td><a class="sig" id="47">-</a></td>
+                    <td><a class="sig" id="57">-</a></td>
+                </tr>
+            </table>
+        </div>
+        <div name="sp">
+            <style>
+                input::-webkit-outer-spin-button,
+                input::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                }
+            </style>
+            <br />
+            <a>볼륨 조절</a>
+            <a>&nbsp;</a>
+            <input type="range" value="50" min="0" max="100" id="vol" onchange="chang_vol();" />
+            <a>&nbsp;</a>
+            <a id="vv">50</a>
+            <a>%&nbsp;|&nbsp;</a>
+            <a href="javascript:test_sound();">테스트 소리재생</a>
+            <br />
+            <br />
+            <br />
+            <input type="checkbox" id="auto" onclick="auto_check();" />
+            <a style="padding-left:10px;" href="javascript:clk();">페이지 로드 시 자동으로 자가진단 하기</a>
+            <br />
+            <br />
+            <div id="search_box" style="width: 150px;">
+                <input type="number" placeholder="학번" onkeyup="auto_check();" id="q" style="width: 60px; text-align:right;" />
+                <input type="text" id="name" placeholder="이름" onkeyup="auto_check();" class="sd" style="width: 60px; text-align: left;" />
+
+            </div>
+            <div id="search_box" style="width: 200px;">
+                <input type="number" id="birth" placeholder="생년월일(YYMMDD)" onkeyup="auto_check();" class="sd" />
+            </div>
+            <div id="search_box" style="width: 170px;">
+                <input type="number" id="pw" placeholder="비밀번호(****)" onkeyup="auto_check();" class="sd" />
+            </div>
+            <iframe width="1" height="1" scrolling="no" frameborder="0" id="rcb"></iframe>
+        </div>
+    </div>
+    <br />
+
+
+
+
+
+    <script>
+        var div = document.getElementsByName('sp');
+        var atag = document.getElementsByName('tg');
+        for (var i = 0; i < atag.length; i++) {
+            var spdcd = "javascript:div_sh(" + Number(i + 1) + ");";
+            atag[i].setAttribute('href', spdcd);
+        }
+        div_sh(1);
+
+        function div_sh(num) {
+            for (var i = 0; i < div.length; i++) {
+                div[i].style.display = 'none';
+                atag[i].style.color = 'rgba(0, 0, 0, 0.4)'
+            }
+            atag[num - 1].style.color = 'rgba(0, 0, 0, 1)';
+            div[num - 1].style.display = 'inline-block';
+
+            play_audio('dd.mp3');
+        }
+
+
+    </script>
+    <br />
+    <br />
+    <a href="javascript:gotosu();" class="inp">팀즈 연결</a>
+    <a href="javascript:jagajindan();" class="inp">원클릭 자가진단</a>
+    <a class="inp" id="cked" href="javascript:changck();">시종 켜기</a>
+    <br />
+    <style>
+        .asdfffff {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.4);
+        }
+    </style>
+    <a href="https://open.kakao.com/o/srPrXpdd" class="asdfffff">사용 중 오류를 발견하셨다면</a>
+    <a href="https://open.kakao.com/o/srPrXpdd" class="asdfffff" style="color: red;">&nbsp;여기</a>
+    <a href="https://open.kakao.com/o/srPrXpdd" class="asdfffff">를 눌러 신고 해주세요</a>
+
+
+    <a id="ttmm"></a>
+    <script type="text/javascript" src="data.js"></script>
+
+</body>
+</html>
