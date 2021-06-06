@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html>
+<html lang="kr" id="html">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>치킨무 타임테이블</title>
+    <link rel="stylesheet" href="css.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+        html {
+            font-family: 'Nanum Gothic', sans-serif;
+            font-size: 1px;
+        }
+        a{
+            font-size: 15rem;
+        }
+        * {
+            padding: 0;
+            margin: 0;
+            text-decoration: none;
+            outline: none;
+        }
+            *:hover {
+                text-decoration: none;
+            }
+        div {
+            display: inline-block;
+        }
+        .meal {
+            box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.2);
+            border-radius: 10rem;
+            width: 150rem;
+            padding: 15rem;
+            height: 200rem;
+            margin: 10rem;
+            
+        }
+        .mealTitle{
+            background-color: rgb(71, 111, 222);
+            height: 23rem;
+            width: 50rem;
+            text-align:center;
+            border-radius: 15rem;
+            margin-bottom: 10rem;
+            line-height: 23rem;
+        }
+        .mealTitleTXT{
+            color: #fff;
+        }
+        .mealInfoDIV {
+            display: table;
+        }
+        .mealInfo {
+            overflow: auto;
+            width: 150rem;
+        }
+            .mealInfo::-webkit-scrollbar {
+                display: none !important;
+            }
+        .box {
+            width: 100%;
+            white-space: nowrap;
+            overflow-x: scroll;
+            -ms-overflow-style: none;
+        }
+
+            .box::-webkit-scrollbar {
+                display: none !important;
+            }
+        .tb{
+            text-align:center;
+        }
+        .timetableDIV {
+            background-color: #fff;
+            color: rgb(71, 111, 222);
+            width: 90rem;
+            height: 90rem;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            border-radius: 100rem;
+            box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.2);
+            float: left;
+            position: absolute;
+        }
+
+            .putEnter {
+                white-space: pre-line;
+                transform: translateX(5rem);
+                width: 80rem;
+            }
+        .timetableBOX {
+            height: 120rem;
+            position: relative;
+        }
+        .date{
+            border: 0;
+            width: 150rem;
+            background: rgba(0, 0, 0, 0);
+        }
+        .all {
+            padding-left: 25rem;
+            width: calc(100vw - 45rem);
+        }
+        .title{
+            font-size: 22rem;
+            font-weight: 600;
+        }
+        .titletxt{
+            font-size: 22rem;
+        }
+        .hak {
+            box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.2);
+            border-radius: 10rem;
+            width: calc(100vw - 90rem);
+            max-width: 560rem;
+            padding: 15rem;
+            height: 100rem;
+            margin: 10rem;
+        }
+        .info {
+            background-color: rgb(71, 111, 222);
+            color: #fff;
+            height: 60rem;
+            width: calc(100vw - 80rem);
+            max-width: 570rem;
+            border-radius: 10rem;
+            margin: 10rem 0;
+            padding: 15rem;
+        }
+        .title_info {
+            background-color: rgb(71, 111, 222);
+            font-size: 27rem;
+        }
+        .txt_info{
+            width: 20rem;
+            margin-top: 10rem;
+            text-align:right;
+        }
+        .input_info {
+            font-family: 'Nanum Gothic', sans-serif;
+            background-color: rgba(0, 0, 0, 0);
+            color: #fff;
+            border: 0;
+        }
+            .input_info::placeholder {
+                color: #fff;
+            }
+
+        input {
+            font-family: 'Nanum Gothic', sans-serif;
+        }
+        .goto_info{
+            margin-left: 50rem;
+        }
+        .select_info {
+            margin-right: 10rem;
+        }
+            
+        .scn_info{
+            width: calc(100% - 100rem);
+        }
+        .spcb {
+            margin: 0;
+            padding: 0;
+            padding-right: 15rem;
+        }
+        .sigong {
+            box-shadow: 2rem 2rem 5rem rgba(0, 0, 0, 0.2);
+            border-radius: 10rem;
+            width: calc(100vw - 90rem);
+            max-width: 560rem;
+            padding: 15rem;
+            height: 185rem;
+            margin: 10rem;
+        }
+        .sibox{
+            margin-bottom: 5rem;
+        }
+        .time{
+            background-color: rgba(0, 0, 0, 0);
+            border: 0;
+            width: 100rem;
+        }
+        .btn:hover{
+            cursor: pointer;
+        }
+
+        .spc {
+            border: 1px solid rgb(71, 111, 222);
+            color: rgb(71, 111, 222);
+            background-color: #fff;
+            width: 100rem;
+            height: 27rem;
+            font-size: 15rem;
+            border-radius: 100rem;
+            margin-left: 8rem;
+        }
+        .select {
+            color: rgb(71, 111, 222);
+            text-align:center;
+        }
+    </style>
+</head>
+<body link="black" alink="black" vlink="black">
+    
+    <div class="all">
+        <div class="info">
+            <select class="title_info input_info select_info btn" id="wh">
+                <option value="nul" class="select">&nbsp;지역</option>
+                <option value="B10" class="select">&nbsp;서울</option>
+                <option value="C10" class="select">&nbsp;부산</option>
+                <option value="D10" class="select">&nbsp;대구</option>
+                <option value="E10" class="select">&nbsp;인천</option>
+                <option value="F10" class="select">&nbsp;광주</option>
+                <option value="G10" class="select">&nbsp;대전</option>
+                <option value="H10" class="select">&nbsp;울산</option>
+                <option value="I10" class="select">&nbsp;세종</option>
+                <option value="J10" class="select">&nbsp;경기</option>
+                <option value="K10" class="select">&nbsp;강원</option>
+                <option value="M10" class="select">&nbsp;충북</option>
+                <option value="N10" class="select">&nbsp;충남</option>
+                <option value="P10" class="select">&nbsp;전북</option>
+                <option value="Q10" class="select">&nbsp;전남</option>
+                <option value="R10" class="select">&nbsp;경북</option>
+                <option value="S10" class="select">&nbsp;경남</option>
+                <option value="T10" class="select">&nbsp;제주</option>
+
+            </select>
+            <input type="text" placeholder="학교명" class="title_info input_info scn_info" id="scn" onkeyup="ifEnter();"/>
+            <br />
+            <input type="text" placeholder="0" class="txt_info input_info" id="hak" onkeyup="ifEnter();"/>
+            <a class="txt_info">학년</a>
+            <input type="text" placeholder="0" class="txt_info input_info" id="ban" onkeyup="ifEnter();"/>
+            <a class="txt_info">반</a>
+
+            <input type="button" value="학급 정보 저장 및 이동하기" class="input_info goto_info btn" onclick="changing();" />
+        </div>
+
+        <br />
+        <input type="date" name="date" onchange="changing();" class="date" id="date" required />
+        
+        <div>
+            <a style="margin-left:15rem;" href="javascript:goReals();">릴리즈 버전</a>
+            <a style="margin-left:10rem;" href="https://www.notion.so/6d9362d9f0ae4d2387bcfa2bc7e0e833?v=8fbedecb5a9d46c1b3b1ee8848cfce87" target="_blank">개발 일지</a>
+            <a style="margin-left:10rem;" href="https://open.kakao.com/o/srPrXpdd" target="_blank">버그 제보</a>
+        </div>
+
+        <script>
+            //쿠키관련 스크립트
+            function setCookie(name, value, exp) {
+                //alert('set' + name);
+                var date = new Date();
+                date.setTime(date.getTime() + exp * 24 * 60 * 60 * 1000);
+                document.cookie = name + '=' + value + ';expires=' + date.toUTCString() + ';path=/';
+            }
+            function getCookie(name) {
+                //alert('get' + name);
+                var value = document.cookie.match('(^|;) ?' + name + '=([^;]*)(;|$)');
+                return value ? value[2] : null;
+            }
+            function deleteCookie(name) {
+                //alert('del' + name);
+                document.cookie = name + '=; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+            }
+            function goReals() {
+                deleteCookie('beta');
+                setCookie('beta', 0, 1000);
+                location.replace('https://chicken-moo.com/yhms');
+            }
+        </script>
+
+
+        <br />
+        <div style="padding-top: 15rem;">
+            <a name="timeSet" class="title"></a>
+            <a class="title">시간표</a>
+            <a class="titletxt">입니다.</a>
+        </div>
+        <br />
+
+        <div class="box timetableBOX" style="padding-top: 15rem;">
+            <div class="spcb">
+                <div name="timetableDIV" style="z-index: 7;" class="timetableDIV">
+                    <a name="timetable" class="putEnter">-</a>
+                </div>
+
+                <div name="timetableDIV" style="z-index: 6; transform: translateX(80rem);" class="timetableDIV">
+                    <a name="timetable" class="putEnter">-</a>
+                </div>
+                <div name="timetableDIV" style="z-index: 5; transform: translateX(160rem);" class="timetableDIV">
+                    <a name="timetable" class="putEnter">-</a>
+                </div>
+                <div name="timetableDIV" style="z-index: 4; transform: translateX(240rem);" class="timetableDIV">
+                    <a name="timetable" class="putEnter">-</a>
+                </div>
+                <div name="timetableDIV" style="z-index: 3; transform: translateX(320rem);" class="timetableDIV">
+                    <a name="timetable" class="putEnter">-</a>
+                </div>
+                <div name="timetableDIV" style="z-index: 2; transform: translateX(400rem);" class="timetableDIV">
+                    <a name="timetable" class="putEnter">-</a>
+                </div>
+
+                <div name="timetableDIV" style="z-index: 1; transform: translateX(480rem);" class="timetableDIV">
+                    <a name="timetable" class="putEnter">-</a>
+                </div>
+                <div style="transform: translateX(560rem); color: rgb(71, 111, 222); width: 20rem; height: 90rem; line-height: 90rem; text-align: center; border-radius: 100rem; float: left; position: absolute;"></div>
+            </div>
+
+        </div>
+        <br />
+        <div style="padding-top: 15rem;">
+
+            <a class="title" name="timeSet"></a>
+            <a class="title">급식</a>
+            <a class="titletxt">은 맛있을까요?</a>
+        </div>
+        <br />
+        <div class="mealDIV box">
+            <div class="meal">
+                <div class="mealTitle"><a class="mealTitleTXT">아침</a></div>
+                <br />
+                <div class="mealInfoDIV"><div class="mealInfo"><a name="mealInfo">-</a></div></div>
+            </div>
+            <div class="meal">
+                <div class="mealTitle"><a class="mealTitleTXT">점심</a></div>
+                <br />
+                <div class="mealInfoDIV"><div class="mealInfo"><a name="mealInfo">-</a></div></div>
+            </div>
+            <div class="meal">
+                <div class="mealTitle"><a class="mealTitleTXT">저녁</a></div>
+                <br />
+                <div class="mealInfoDIV"><div class="mealInfo"><a name="mealInfo">-</a></div></div>
+            </div>
+        </div>
+        <br />
+
+        <div style="padding-top: 15rem;">
+            <a class="title" name="timeSet"></a>
+            <a class="title">학사일정</a>
+            <a class="titletxt">&nbsp;체크해 주세요.</a>
+        </div>
+        <br />
+        <div class="hak box">
+            <a name="schedule">-</a>
+        </div>
+        <br />
+        <div style="padding-top: 15rem;">
+            <a class="title">시종 시간표</a>
+            <a class="titletxt">입니다.</a>
+            <input type="button" value="시종 켜기" onclick="startChaim();" id="onoff" class="spc" />
+
+        </div>
+        <br />
+        <div class="sigong">
+            <center>
+                <div style="text-align:left;">
+                    <div class="sibox">
+                        <a>1교시&nbsp;</a>
+                        <input type="time" name="start" value="09:00" class="time" onchange="siangchange();" />
+                        <a>~</a>
+                        <input type="time" name="end" value="09:45" class="time" onchange="siangchange();" />
+                    </div>
+                    <br />
+
+                    <div class="sibox">
+                        <a>2교시&nbsp;</a>
+                        <input type="time" name="start" value="09:55" class="time" onchange="siangchange();" />
+                        <a>~</a>
+                        <input type="time" name="end" value="10:40" class="time" onchange="siangchange();" />
+                    </div>
+                    <br />
+
+                    <div class="sibox">
+                        <a>3교시&nbsp;</a>
+                        <input type="time" name="start" value="10:50" class="time" onchange="siangchange();" />
+                        <a>~</a>
+                        <input type="time" name="end" value="11:35" class="time" onchange="siangchange();" />
+                    </div>
+                    <br />
+
+                    <div class="sibox">
+                        <a>4교시&nbsp;</a>
+                        <input type="time" name="start" value="11:45" class="time" onchange="siangchange();" />
+                        <a>~</a>
+                        <input type="time" name="end" value="12:30" class="time" onchange="siangchange();" />
+                    </div>
+                    <br />
+
+                    <div class="sibox">
+                        <a>5교시&nbsp;</a>
+                        <input type="time" name="start" value="13:25" class="time" onchange="siangchange();" />
+                        <a>~</a>
+                        <input type="time" name="end" value="14:10" class="time" onchange="siangchange();" />
+                    </div>
+                    <br />
+
+                    <div class="sibox">
+                        <a>6교시&nbsp;</a>
+                        <input type="time" name="start" value="14:20" class="time" onchange="siangchange();" />
+                        <a>~</a>
+                        <input type="time" name="end" value="15:05" class="time" onchange="siangchange();" />
+                    </div>
+                    <br />
+
+                    <div class="sibox">
+                        <a>7교시&nbsp;</a>
+                        <input type="time" name="start" value="15:15" class="time" onchange="siangchange();" />
+                        <a>~</a>
+                        <input type="time" name="end" value="16:00" class="time" onchange="siangchange();" />
+                    </div>
+                    <br />
+                    <input type="button" value="리셋하기" onclick="resethagi();" style="background-color: rgba(0, 0, 0, 0); border: 0;" class="btn" />
+                </div>
+            </center>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
