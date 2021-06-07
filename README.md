@@ -11,9 +11,9 @@
  > 용호중학교 3학년에서 테스트 사용 중이며 곧 전교 도입될 예정입니다.
  
  
- > Beta버전이 개발 중입니다! [여기](https://www.notion.so/6d9362d9f0ae4d2387bcfa2bc7e0e833?v=8fbedecb5a9d46c1b3b1ee8848cfce87)에서 개발 일지를 확인하세요!
+ > Beta 버전이 개발 중입니다! [여기](https://www.notion.so/6d9362d9f0ae4d2387bcfa2bc7e0e833?v=8fbedecb5a9d46c1b3b1ee8848cfce87)에서 개발 일지를 확인하세요!
 
- **제작 정보**
+ ### 제작 정보
  > - 사용툴 : VS code
  > - 참여도 : 100%
  > - 소요기간 : 1달
