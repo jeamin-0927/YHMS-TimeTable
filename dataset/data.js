@@ -1,3 +1,6 @@
+document.write('<input type="text" id="hak" style="width: 25px; padding-right: 5px;" placeholder="학년" /><a>&nbsp;학년&nbsp;&nbsp;</a><input type="text" id="ban" style="width: 25px; padding-right: 5px;" placeholder="반" /><a>&nbsp;반&nbsp;&nbsp;</a><br /><br>');
+
+
 document.write('<a>시간표 세팅<a/><br />');
 function print_time(howMany, day) {
     document.write('<a>' + day + '요일 :&nbsp;</a>');
@@ -11,7 +14,7 @@ print_time(7, '화');
 print_time(6, '수');
 print_time(7, '목');
 print_time(6, '금');
-document.write('<input type="button" onclick="timec();" value="바꾸기" style="margin-top: 10px; " /><br /><textarea style="margin-top: 10px; width: 570px; height: 200px; display: none;" id="timet"></textarea><br><br>');
+document.write('<textarea style="margin-top: 10px; width: 570px; height: 200px; display: none;" id="timet"></textarea><br><br>');
 
 function timec() {
     var sd = document.getElementsByName('time');
@@ -52,7 +55,7 @@ function print_teams() {
         //console.log(name[i].value, link[i].value);
     }
 }
-document.write('<input type="button" onclick="teamsc();" value="바꾸기" style="margin-top: 10px; " /><br /><textarea style="margin-top: 10px; width: 570px; height: 200px; display: none;" id="teamst"></textarea><br>');
+document.write('<textarea style="margin-top: 10px; width: 570px; height: 200px; display: none;" id="teamst"></textarea><br>');
 function teamsc() {
     var name = document.getElementsByName('teamsT');
     var link = document.getElementsByName('temasL');
@@ -67,11 +70,24 @@ function teamsc() {
 }
 teamsc();
 
-document.write('<textarea style="margin-top: 10px; width: 570px; height: 200px;" id="allt"></textarea><br><br>');
+document.write('<textarea style="margin-top: 10px; width: 570px; height: 200px;" id="allt"></textarea><br><input type="button" onclick="change();" value="바꾸기 / 복사하기" style="margin-top: 10px; " /><a>&nbsp;</a><input type="button" onclick="location.reload();" value="초기화" style="margin-top: 10px; " /><br /><br>');
 function change_allt() {
     try {
-        document.getElementById('allt').value = document.getElementById('timet').value + document.getElementById('teamst').value;
+        var sp = '//' + document.getElementById('hak').value + '학년 ' + document.getElementById('ban').value + '반\n\n';
+        document.getElementById('allt').value = sp + document.getElementById('timet').value + document.getElementById('teamst').value;
     }
     catch { }
 }
 change_allt();
+
+function change() {
+    timec();
+    teamsc();
+    change_allt();
+    copy_to_clipboard();
+}
+function copy_to_clipboard() {
+    var copyText = document.getElementById("allt");
+    copyText.select();
+    document.execCommand("Copy");
+}
