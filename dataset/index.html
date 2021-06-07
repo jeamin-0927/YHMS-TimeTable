@@ -1,55 +1,33 @@
 ﻿<!DOCTYPE html>
 <html lang="kr" id="html">
 <head>
-    <script type="text/javascript" src="all.js"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YHMS 타임테이블 데이터셋</title>
-    
+    <style>
+        .time {
+            width: 80px;
+            padding-right: 5px;
+        }
+    </style>
 </head>
 <body link="black" alink="black" vlink="black">
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 1교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 2교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 3교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 4교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 5교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 6교시" />
-    <br />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 1교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 2교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 3교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 4교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 5교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 6교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 7교시" />
-    <br />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 1교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 2교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 3교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 4교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 5교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 6교시" />
-    <br />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 1교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 2교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 3교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 4교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 5교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 6교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 7교시" />
-    <br />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 1교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 2교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 3교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 4교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 5교시" />
-    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 6교시" />
-    <br />
-    <input type="button" onclick="timec();" value="바꾸기" style="margin-top: 10px; "/>
-    <br />
-    <textarea style="margin-top: 10px; width: 570px; height: 200px;" id="timet"></textarea>
-
     <script>
+        document.write('<a>시간표 세팅<a/><br />');
+        function print_time(howMany, day) {
+            document.write('<a>' + day + '요일 :&nbsp;</a>');
+            for (var i = 1; i <= howMany; i++) {
+                document.write('<input type="text" name="time" class="time" placeholder="' + i + '교시" /><a>&nbsp;</a>');
+            }
+            document.write('<br>');
+        }
+        print_time(6, '월');
+        print_time(7, '화');
+        print_time(6, '수');
+        print_time(7, '목');
+        print_time(6, '금');
+        document.write('<input type="button" onclick="timec();" value="바꾸기" style="margin-top: 10px; " /><br /><textarea style="margin-top: 10px; width: 570px; height: 200px; display: none;" id="timet"></textarea><br><br>');
+
         function timec() {
             var sd = document.getElementsByName('time');
             var time = 'var sigan = [' + '\n' +
@@ -62,8 +40,56 @@
                 '                ["휴교"]\n' + '];\n\n'
                 ;
             document.getElementById('timet').value = time;
+            try {
+                change_allt();
+            } catch {}
         }
         timec();
+
+
+
+        document.write('<a>팀즈 연결 세팅<a/><br /><div id="teams"></div>')
+        document.getElementById('teams').innerHTML = document.getElementById('teams').innerHTML + '<input type="text" style="width: 80px;" name="teamsT" placeholder="과목"/><a>&nbsp;:&nbsp;</a ><input type="text" style="width: 180px;" name="temasL" placeholder="URL"/><a>&nbsp;</a><input type="button" onclick="print_teams();" value="+" /><br />';
+        print_teams(); print_teams(); print_teams(); print_teams();
+        function print_teams() {
+            var name = document.getElementsByName('teamsT');
+            var link = document.getElementsByName('temasL');
+            var ns = [], ls = [];
+            for (var i = 0; i < name.length; i++) {
+                ns[i] = name[i].value;
+                ls[i] = link[i].value;
+                //console.log(ns[i].value, ls[i].value);
+            }
+            document.getElementById('teams').innerHTML = document.getElementById('teams').innerHTML + '<input type="text" style="width: 80px;" name="teamsT" placeholder="과목"/><a>&nbsp;:&nbsp;</a ><input type="text" style="width: 180px;" name="temasL" placeholder="URL"/><a>&nbsp;</a><input type="button" onclick="print_teams();" value="+" /><br />';
+            for (var i = 0; i < ns.length; i++) {
+                document.getElementsByName('teamsT')[i].value = ns[i];
+                document.getElementsByName('temasL')[i].value = ls[i];
+                //console.log(name[i].value, link[i].value);
+            }
+        }
+        document.write('<input type="button" onclick="teamsc();" value="바꾸기" style="margin-top: 10px; " /><br /><textarea style="margin-top: 10px; width: 570px; height: 200px; display: none;" id="teamst"></textarea><br>');
+        function teamsc() {
+            var name = document.getElementsByName('teamsT');
+            var link = document.getElementsByName('temasL');
+            var temas = 'var url = {\n';
+            for (var i = 0; i < name.length - 1; i++) {
+                temas = temas + '                "' + name[i].value + '" : "' + link[i].value + '",\n';
+            }
+            var i = name.length - 1;
+            temas = temas + '                "' + name[i].value + '" : "' + link[i].value + '"\n';
+            document.getElementById('teamst').value = temas + '};\n\n';
+            change_allt();
+        }
+        teamsc();
+
+        document.write('<textarea style="margin-top: 10px; width: 570px; height: 200px;" id="allt"></textarea><br><br>');
+        function change_allt() {
+            try {
+                document.getElementById('allt').value = document.getElementById('timet').value + document.getElementById('teamst').value;
+            }
+            catch {}
+        }
+        change_allt();
     </script>
 
 </body>
