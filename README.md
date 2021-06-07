@@ -8,12 +8,21 @@
 
 
 
- > 용호중학교 3학년에서 테스트 사용 중이며 곧 전교 도입될 예정입니다.
- 
- 
- > [Beta 버전](https://chicken-moo.com/yhms/beta)이 개발 중입니다! [여기](https://www.notion.so/6d9362d9f0ae4d2387bcfa2bc7e0e833?v=8fbedecb5a9d46c1b3b1ee8848cfce87)에서 개발 일지를 확인하세요!
+ > 용호중학교 3학년에서 테스트 사용 중이며 **곧 전교 도입될 예정**입니다.
+
+
+ > [**Beta 버전**](https://chicken-moo.com/yhms/beta)이 *개발 중* 입니다! [여기](https://www.notion.so/6d9362d9f0ae4d2387bcfa2bc7e0e833?v=8fbedecb5a9d46c1b3b1ee8848cfce87)에서 개발 일지를 확인하세요!
+
+
 
  ### 제작 정보
+
  > - 사용툴 : VS code
  > - 참여도 : 100%
  > - 소요기간 : 1달
+
+
+
+소스코드 사용 시 주석으로 아래 출처를 남겨주세요.
+
+> 출처 : chicken-moo.com/yhms
