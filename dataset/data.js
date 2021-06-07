@@ -1,5 +1,7 @@
 document.write('<input type="text" id="hak" style="width: 25px; padding-right: 5px;" placeholder="학년" /><a>&nbsp;학년&nbsp;&nbsp;</a><input type="text" id="ban" style="width: 25px; padding-right: 5px;" placeholder="반" /><a>&nbsp;반&nbsp;&nbsp;</a><br /><br>');
 
+document.write('<a>주의사항</a><br /><a>시간표 작성 시의 과목명과 팀즈 연결 과목명을 동일하게 설정 바람</a><br /><a>과목 번호는 다른데 팀즈 방이 같은 경우라도 모두 입력 바람</a><br />');
+document.write('<a>ex) 영1과 영3의 팀즈 방이 같은 경우 두가지 모두 다른 칸에 과목과 URL 입력</a><br /><a>영1 : https://~~~</a><br /><a>영3 : https://~~~</a><br /><br />');
 
 document.write('<a>시간표 세팅<a/><br />');
 function print_time(howMany, day) {
