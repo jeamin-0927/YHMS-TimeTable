@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="kr" id="html">
+<head>
+    <script type="text/javascript" src="all.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YHMS 타임테이블 데이터셋</title>
+    
+</head>
+<body link="black" alink="black" vlink="black">
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 1교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 2교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 3교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 4교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 5교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="월요일 6교시" />
+    <br />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 1교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 2교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 3교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 4교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 5교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 6교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="화요일 7교시" />
+    <br />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 1교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 2교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 3교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 4교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 5교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="수요일 6교시" />
+    <br />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 1교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 2교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 3교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 4교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 5교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 6교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="목요일 7교시" />
+    <br />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 1교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 2교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 3교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 4교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 5교시" />
+    <input type="text" name="time" style="width:80px; padding-right: 5px;" placeholder="금요일 6교시" />
+    <br />
+    <input type="button" onclick="timec();" value="바꾸기" style="margin-top: 10px; "/>
+    <br />
+    <textarea style="margin-top: 10px; width: 570px; height: 200px;" id="timet"></textarea>
+
+    <script>
+        function timec() {
+            var sd = document.getElementsByName('time');
+            var time = 'var sigan = [' + '\n' +
+                '                ["휴교"],' + '\n' +
+                '                ["' + sd[0].value + '", "' + sd[1].value + '", "' + sd[2].value + '", "' + sd[3].value + '", "' + sd[4].value + '", "' + sd[5].value + '"], //월' + '\n' +
+                '                ["' + sd[6].value + '", "' + sd[7].value + '", "' + sd[8].value + '", "' + sd[9].value + '", "' + sd[10].value + '", "' + sd[11].value + '", "' + sd[12].value + '"],//화' + '\n' +
+                '                ["' + sd[13].value + '", "' + sd[14].value + '", "' + sd[15].value + '", "' + sd[16].value + '", "' + sd[17].value + '", "' + sd[18].value + '"], //수' + '\n' +
+                '                ["' + sd[19].value + '", "' + sd[20].value + '", "' + sd[21].value + '", "' + sd[22].value + '", "' + sd[23].value + '", "' + sd[24].value + '", "' + sd[25].value + '"],//목' + '\n' +
+                '                ["' + sd[26].value + '", "' + sd[27].value + '", "' + sd[28].value + '", "' + sd[29].value + '", "' + sd[30].value + '", "' + sd[31].value + '"], //금' + '\n' +
+                '                ["휴교"]\n' + '];\n\n'
+                ;
+            document.getElementById('timet').value = time;
+        }
+        timec();
+    </script>
+
+</body>
+</html>
