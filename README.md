@@ -65,14 +65,15 @@
 
 1. 시간표
 
-   `function data()` 안의 값을 설정해 주세요.
+   `function data()` 의 값을 설정해 주세요.
 
 2. 시종
 
-   `var setTime`변수를 원하는 시종 시간으로 바꾸어 주세요.
+   `var setTime` 변수를 원하는 시종 시간으로 바꾸어 주세요.
 
 3. 자가진단
 
    `function jagajindan()`의 `var link`의 `org`, `area`, `key` 피라미터를 바꾸어 주세요.
 
    자가진단 api 링크 설정은 [윈섭 api](https://api.winsub.kr/)를 참고해 주세요.
+
