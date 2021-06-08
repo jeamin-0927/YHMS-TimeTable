@@ -32,3 +32,36 @@
 소스코드 사용 시 주석으로 아래 출처를 남겨주세요.
 
 > 출처 : chicken-moo.com/yhms
+
+
+
+
+
+### YHMS 타임테이블 모습 및 사용방법
+
+1. 학년/반을 선택하여 각반으로 이동을 합니다.
+2. 시간표, 급식, 큰단위 설정탭이 있고 해당하는 항목을 클릭하여 확인 가능합니다.
+3. 학번이름 생일 자가진단 비밀번호를 입력하면 원클릭 자가진단이 가능합니다.
+
+<img src="https://chicken-moo.com/files/img/readme/yhtt/1.png" alt="1" style="zoom:30%;" />
+
+
+
+<img src="https://chicken-moo.com/files/img/readme/yhtt/2.png" alt="2" style="zoom:40%;" />
+
+
+
+<img src="https://chicken-moo.com/files/img/readme/yhtt/3.png" alt="3" style="zoom:40%;" />
+
+
+
+<img src="https://chicken-moo.com/files/img/readme/yhtt/4.png" alt="4" style="zoom:40%;" />
+
+<img src="https://chicken-moo.com/files/img/readme/yhtt/5.png" alt="5" style="zoom:40%;" />
+
+
+
+<img src="https://chicken-moo.com/files/img/readme/yhtt/6.png" alt="6" style="zoom:40%;" />
+
+
+
