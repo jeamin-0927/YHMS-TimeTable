@@ -43,25 +43,25 @@
 2. 시간표, 급식, 큰단위 설정탭이 있고 해당하는 항목을 클릭하여 확인 가능합니다.
 3. 학번이름 생일 자가진단 비밀번호를 입력하면 원클릭 자가진단이 가능합니다.
 
-<img src="https://chicken-moo.com/files/img/readme/yhtt/1.png" alt="1" style="width: 400px;" />
+<img src="https://chicken-moo.com/files/img/readme/yhtt/1.png" alt="1" style="width: 100px;" />
 
 
 
-<img src="https://chicken-moo.com/files/img/readme/yhtt/2.png" alt="2" style="width: 400px;" />
+<img src="https://chicken-moo.com/files/img/readme/yhtt/2.png" alt="2" style="width: 100px;" />
 
 
 
-<img src="https://chicken-moo.com/files/img/readme/yhtt/3.png" alt="3" style="width: 400px;" />
+<img src="https://chicken-moo.com/files/img/readme/yhtt/3.png" alt="3" style="width: 100px;" />
 
 
 
-<img src="https://chicken-moo.com/files/img/readme/yhtt/4.png" alt="4" style="width: 400px;" />
+<img src="https://chicken-moo.com/files/img/readme/yhtt/4.png" alt="4" style="width: 100px;" />
 
-<img src="https://chicken-moo.com/files/img/readme/yhtt/5.png" alt="5" style="width: 400px;" />
+<img src="https://chicken-moo.com/files/img/readme/yhtt/5.png" alt="5" style="width: 100px;" />
 
 
 
-<img src="https://chicken-moo.com/files/img/readme/yhtt/6.png" alt="6" style="width: 400px;" />
+<img src="https://chicken-moo.com/files/img/readme/yhtt/6.png" alt="6" style="width: 100px;" />
 
 
 
