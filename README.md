@@ -75,4 +75,4 @@
 
    `function jagajindan()`의 `var link`의 `org`, `area`, `key` 피라미터를 바꾸어 주세요.
 
-   자세한 자가진단 api 설정은 [윈섭 api](https://api.winsub.kr/)를 참고해 주세요.
+   자가진단 api 링크 설정은 [윈섭 api](https://api.winsub.kr/)를 참고해 주세요.
