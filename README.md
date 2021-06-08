@@ -43,4 +43,15 @@
 2. 시간표, 급식, 큰단위 설정탭이 있고 해당하는 항목을 클릭하여 확인 가능합니다.
 3. 학번이름 생일 자가진단 비밀번호를 입력하면 원클릭 자가진단이 가능합니다.
 
-<img src="http://chicken-moo.com/files/img/readme/yhtt/gif.gif">
+![1](Y:\web\files\img\readme\yhtt\1.jpg)
+
+![2](Y:\web\files\img\readme\yhtt\2.jpg)
+
+![3](Y:\web\files\img\readme\yhtt\3.jpg)
+
+![4](Y:\web\files\img\readme\yhtt\4.jpg)
+
+![5](Y:\web\files\img\readme\yhtt\5.jpg)
+
+![6](Y:\web\files\img\readme\yhtt\6.jpg)
+
