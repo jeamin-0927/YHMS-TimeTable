@@ -47,7 +47,7 @@
 
 > 출처 입력 시
 >
-> "출처 : https://chicken-moo.com/yhms/파일명.확장자"
+> "출처 : https://chicken-moo.com/yhms/"
 >
 > 형식으로 입력 바람
 
