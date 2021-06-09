@@ -21,8 +21,13 @@
 > 1.  [YHMS 타임테이블](#YHMS-타임테이블)
 > 2. [프로그램 정보](#프로그램-정보)
 >    - [소스코드 사용 조건](#모든-소스코드는-사용-가능합니다.)
-> 3. [사용 모습 및 방법](#YHMS-타임테이블-모습-및-사용방법)
-> 4. [도입 시 수정 사항](#치킨무-타임테이블-도입-시-바꾸어야될-코드)
+> 3.  [사용 모습 및 방법](#YHMS-타임테이블-모습-및-사용방법)
+>     - [메인 화면](#메인-화면)
+>     - [시간표](#시간표)
+>     - [급식](#급식)
+>     - [큰 단위](#큰-단위)
+>     - [설정 화면](#설정-화면)
+> 4.  [도입 시 수정 사항](#치킨무-타임테이블-도입-시-바꾸어야될-코드)
 
 
 
@@ -58,17 +63,27 @@
 
 
 
-
+### 메인 화면
 
 ![1](https://chicken-moo.com/files/img/readme/yhtt/1.jpg)
 
+
+
+### 시간표
+
 ![2](https://chicken-moo.com/files/img/readme/yhtt/2.jpg)
 
+### 급식
+
 ![3](https://chicken-moo.com/files/img/readme/yhtt/3.jpg)
+
+### 큰 단위
 
 ![4](https://chicken-moo.com/files/img/readme/yhtt/4.jpg)
 
 ![5](https://chicken-moo.com/files/img/readme/yhtt/5.jpg)
+
+### 설정 화면
 
 ![6](https://chicken-moo.com/files/img/readme/yhtt/6.jpg)
 
