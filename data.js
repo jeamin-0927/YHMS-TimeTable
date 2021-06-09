@@ -554,7 +554,7 @@ function stop_all_audio() {
 }
 function play_audio(a) {
     stop_all_audio();
-    audioFile = new Audio(a);
+    audioFile = new Audio('files/audio/' + a);
     audioFile.volume = document.getElementById('vol').value / 100;
     audioFile.play();
 }
