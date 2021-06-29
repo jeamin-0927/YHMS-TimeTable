@@ -464,6 +464,13 @@ if (ds != '') {
     day = Number(bs);
 }
 
+function redo(){
+    setCookie("regoto", "789456", 10000);
+    
+    console.log(getCookie("regoto"));
+    location.href = './';
+}
+
 var hakneun = getParam('g');
 var hakban = getParam('b');
 var tit = hakneun + '-' + hakban + ' YHMS 타임테이블';

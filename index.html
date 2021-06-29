@@ -13,6 +13,7 @@
         }
     </style>
     <script>
+        document.querySelector("input[id=save-dt]").checked = false;
         //쿠키관련 스크립트
         function setCookie(name, value, exp) {
             //alert('set' + name);
@@ -85,11 +86,31 @@
         <option value="8">&nbsp;8반</option>
     </select>
     <br />
+    <input type="checkbox" id="save-dt">
+    <a href="javascript:setsave();">학반 기억하기</a>
+    <script>
+        function setsave(){
+            var chk = chekd("input[id=save-dt]");
+            console.log(chk);
+            if(chk){
+                document.querySelector("input[id=save-dt]").checked = false;
+            }
+            else{
+                document.querySelector("input[id=save-dt]").checked = true;
+            }
+        }
+        function chekd(apc){
+            return document.querySelector(apc).checked;
+        }
+    </script>
+    <br />
+    <br />
     <br />
     <a href="javascript:goBeta();">베타 버전 사용해보기</a>
     
     <br />
     <br />
+    
     <a class="sans" style="color:crimson;">※ 본인 외의 반 수업에 들어가면 불이익이 있을 수 있습니다 ※</a>
     <br />
     <a class="sans">Copyright ⓒ </a>
@@ -99,6 +120,12 @@
     <a id="ttmm"></a>
     <script type="text/javascript" src="data.js"></script>
     <script>
+        var gotos = getCookie("regoto");
+        //console.log(goto);
+        if(gotos != null && gotos != 789456){
+            location.href = gotos;
+        }
+
         console.log("메이드 바이 잼민");
         function goto() {
             var hak = document.getElementById('hak').value;
@@ -106,7 +133,12 @@
             if (hak != '학년' && ban != '반') {
                 document.getElementById('hak').value = '학년';
                 document.getElementById('ban').value = '반';
-                location.href = './table?g=' + hak + '&b=' + ban;
+                apc = './table?g=' + hak + '&b=' + ban;
+                if(chekd("input[id=save-dt]")){
+                    setCookie("regoto", apc, 100000);
+                }
+                location.href = apc;
+                document.querySelector("input[id=save-dt]").checked = false;
             }
         }
     </script>
