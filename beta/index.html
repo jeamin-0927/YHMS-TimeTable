@@ -8,6 +8,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 <body link="black" alink="black" vlink="black">
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <div id="load">
+        <img src="https://chicken-moo.com/files/img/loading.gif" alt="loading">
+    </div>
+    <script>
+        function loadshow(){
+            $('#load').show();
+            console.log('show');
+        }
+        function loadhide(){
+            $('#load').hide();
+            console.log('hide');
+        }
+    </script>
     <div class="all">
         <div class="info">
             <select class="title_info input_info select_info btn" id="wh">

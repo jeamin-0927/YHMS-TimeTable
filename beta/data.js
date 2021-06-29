@@ -104,7 +104,7 @@ function getTimeTable(eduCode, schoolCode, schoolGrade, grade, classNum, perio, 
     var linkMain = linkGrad[schoolGrade];
     var linkParm = 'ATPT_OFCDC_SC_CODE=' + eduCode + '&SD_SCHUL_CODE=' + schoolCode + '&ALL_TI_YMD=' + date + '&GRADE=' + grade + '&CLASS_NM=' + classNum;
     var linkFull = linkMain + linkKeyType + linkParm;
-    console.log(linkFull);
+    //console.log(linkFull);
     var gson = getJSON(linkFull);
     try {
         if (schoolGrade == 1) {

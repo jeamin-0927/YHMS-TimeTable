@@ -252,9 +252,16 @@ function change(eduCode, schoolCode, schoolGrade, grade, classNum, date) {
     //console.log(schedule);
     document.getElementsByName('schedule')[0].innerHTML = schedule;
 }
+function sleep(ms) {
+    const wakeUpTime = Date.now() + ms;
+    while (Date.now() < wakeUpTime) {}
+  }
 function changing() {
     //console.log('asdf');
-    
+    loadshow();
+    console.log('asdf1');
+    sleep(500);
+    console.log('asdf2');
     grade = document.getElementById('hak').value;
     classNum = document.getElementById('ban').value;
     
@@ -284,14 +291,17 @@ function changing() {
     if (howMany != 0) {
         if (schoolCode == 'error' || schoolGrade == 'error') {
             alert("학교명에 오류가 있습니다.");
+            loadhide();
             return 0;
         }
         if (grade == "") {
             alert("학년을 입력해 주세요.");
+            loadhide();
             return 0;
         }
         if (classNum == "") {
             alert("학반을 입력해 주세요.");
+            loadhide();
             return 0;
         }
         var e = document.getElementById('wh');
@@ -319,6 +329,7 @@ function changing() {
     //console.log(date);
 
     howMany = howMany + 1;
+    loadhide();
 }
 function ifEnter() {
     if (window.event.keyCode == 13) {
