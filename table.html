@@ -286,21 +286,23 @@
             <a href="javascript:test_sound();">테스트 소리재생</a>
             <br />
             <br />
-            <br />
-            <input type="checkbox" id="auto" onclick="auto_check();" />
+            <div style="display: none;">
+                <input type="checkbox" id="auto" onclick="auto_check();" />
             <a style="padding-left:10px;" href="javascript:clk();">페이지 로드 시 자동으로 자가진단 하기</a>
-            <br />
-            <br />
+            
+            </div>
             <div id="search_box" style="width: 150px;">
                 <input type="number" placeholder="학번" onkeyup="auto_check();" id="q" style="width: 60px; text-align:right;" />
                 <input type="text" id="name" placeholder="이름" onkeyup="auto_check();" class="sd" style="width: 60px; text-align: left;" />
 
             </div>
+            <div style="display: none;">
             <div id="search_box" style="width: 200px;">
                 <input type="number" id="birth" placeholder="생년월일(YYMMDD)" onkeyup="auto_check();" class="sd" />
             </div>
             <div id="search_box" style="width: 170px;">
                 <input type="number" id="pw" placeholder="비밀번호(****)" onkeyup="auto_check();" class="sd" />
+            </div>
             </div>
             <iframe width="1" height="1" scrolling="no" frameborder="0" id="rcb"></iframe>
         </div>
@@ -335,8 +337,10 @@
     </script>
     <br />
     <br />
-    <a href="javascript:gotosu();" class="inp">팀즈 연결</a>
+    <a href="javascript:gotosu();" class="inp">팀즈 수업 연결</a>
+    <div style="display: none;">
     <a href="javascript:jagajindan();" class="inp">원클릭 자가진단</a>
+</div>
     <a class="inp" id="cked" href="javascript:changck();">시종 켜기</a>
     <br />
     <style>

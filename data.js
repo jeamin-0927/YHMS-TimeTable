@@ -4,303 +4,540 @@ function data(val, hak, ban, day, time) {
     // val == 1 이면 시간표
     // val == 2 이면 URL
     // val == 3 이면 URL 길이
-    if (hak == 1) {
-        if (ban == 1) {
-
-        }
-        if (ban == 2) {
-
-        }
-        if (ban == 3) {
-
-        }
-        if (ban == 4) {
-
-        }
-        if (ban == 5) {
-
-        }
-        if (ban == 6) {
-
-        }
-        if (ban == 7) {
-
-        }
-        if (ban == 8) {
-
-        }
+    if (hak == 1 && ban == 1) {
+        //1학년 1반
+        var sigan = [
+                       ["휴교"],
+                       ["수2", "사회", "국2", "영어", "예체", "예체"], //월
+                       ["국2", "체육", "수1", "과1", "음악", "스포츠", "사회"],//화
+                       ["체육", "기가", "영어", "국1", "도덕", "창체"], //수
+                       ["기가", "과2", "체육", "진로", "수1", "주제", "주제"],//목
+                       ["창주", "국1", "음악", "정보", "과1", "사회"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
     }
-    if (hak == 2) {
-        if (ban == 1) {
-
-        }
-        if (ban == 2) {
-
-        }
-        if (ban == 3) {
-            var sigan = [
-                ["휴교"],
-                ["음악", "미술", "국1", "역사", "과1", "영3"], //월
-                ["영1", "역사", "과2", "스포츠", "수학", "기가", "국1"],//화
-                ["역사", "도덕", "영2", "수학", "체육", "창체"],//수
-                ["미술", "영1", "과1", "국2", "수학", "체육", "도덕"],//목
-                ["도덕", "과3", "체육", "국2", "한문", "기가"],//금
-                ["휴교"]
-            ];
-            var url = {
-                "국1": "https://teams.microsoft.com/l/team/19%3ada3f19a5854247bc91c8ee319324ab41%40thread.tacv2/conversations?groupId=aa5b4976-838e-4f6a-9b3c-b0f10da09021&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국2": "https://teams.microsoft.com/l/team/19%3a0c14ed94250041f7b3f9765bebf70b89%40thread.tacv2/conversations?groupId=f2fe8cab-5d42-4e36-b943-54316ea8d059&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "수학": "https://teams.microsoft.com/l/team/19%3adafd8d8ec598441f9989bcae83359df8%40thread.tacv2/conversations?groupId=3fd2ba4f-423e-4727-8154-dd1b27f3864d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영1": "https://teams.microsoft.com/l/team/19%3a39fb258332e9491a9e29f1c0e1237d0b%40thread.tacv2/conversations?groupId=2d74460e-0f78-430b-941d-0f6973d47134&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영2": "https://teams.microsoft.com/l/team/19%3a7aa3c762a24e4f29b8f5d81fff4fbc18%40thread.tacv2/conversations?groupId=99ca7771-1c6e-4917-a702-2b04c708fe66&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영3": "https://teams.microsoft.com/l/team/19%3aa6dfebd2f45a4ea2a8f090e1f1b2fff3%40thread.tacv2/conversations?groupId=fdd7d0ca-1711-4dc3-9563-083f9a14000c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과1": "https://teams.microsoft.com/l/team/19%3a7e7b03a8687a425fb6ae8753babf1e26%40thread.tacv2/conversations?groupId=b13fb2f3-9844-412d-b1fd-bd0b74c87eac&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과2": "https://teams.microsoft.com/l/team/19%3a99df1142e90e4aea90f7f667d708a00f%40thread.tacv2/conversations?groupId=78bc81f8-82ad-4910-a510-7ec1d1ed445b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과탐": "https://teams.microsoft.com/l/team/19%3a66d39b7ffebd49d9be6e8c173d3ff67c%40thread.tacv2/conversations?groupId=eb42d5fe-bae4-43c8-98e6-86bd273a29c2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "기술": "https://teams.microsoft.com/l/team/19%3ab3dfab0d25df431fa729d1a5e1b33764%40thread.tacv2/conversations?groupId=199258d2-bf0b-4b80-b790-6740908b34f3&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "가정": "https://teams.microsoft.com/l/team/19%3ad7e92638dc2b46e9853c347c0c507914%40thread.tacv2/conversations?groupId=05109278-cb3f-4f76-8799-76b006891e39&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "사회": "https://teams.microsoft.com/l/team/19%3af9f9650e7f284e31bf44521c218e3956%40thread.tacv2/conversations?groupId=b37d7cd6-b975-4975-bce6-2c1b1a79a817&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "한문": "https://teams.microsoft.com/l/team/19%3a83fba9be23b24e9cb9a45a0437496b4d%40thread.tacv2/conversations?groupId=0153b033-cf65-45da-8b0a-5c3b939e883a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "체육": "https://teams.microsoft.com/l/team/19%3a2d8582e6419c45b7804807289db12daa%40thread.tacv2/conversations?groupId=ddeaddda-69f0-4489-8125-88389b1d30bb&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "음악": "https://teams.microsoft.com/l/team/19%3aa060f6dc80514ab8835fc489958d2ca0%40thread.tacv2/conversations?groupId=778fcbab-e7c6-403e-88b1-74577389c72c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "역사": "https://teams.microsoft.com/l/team/19%3a9b5f888719a64f2ba384c36618774b08%40thread.tacv2/conversations?groupId=eb19fc19-610c-43a7-91c8-51d679db906f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "미술": "https://teams.microsoft.com/l/team/19%3ab724023d2b2d49689d1e911b7bb4fafa%40thread.tacv2/conversations?groupId=36fe27af-dbd1-4258-9619-2362438e2d1e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "조종례": "https://teams.microsoft.com/l/team/19%3a9c043ca8c7b94d3a88b141d3fbbd0e5f%40thread.tacv2/conversations?groupId=eab83088-a954-49b4-ac82-f60978436307&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
-            };
-        }
-        if (ban == 4) {
-
-        }
-        if (ban == 5) {
-
-        }
-        if (ban == 6) {
-
-        }
-        if (ban == 7) {
-
-        }
-        if (ban == 8) {
-            
-        }
+    if (hak == 1 && ban == 2) {
+        //1학년 2반
+        var sigan = [
+                       ["휴교"],
+                       ["국2", "음악", "사회", "과1", "예체", "예체"], //월
+                       ["체육", "국1", "기가", "과2", "영어", "스포츠", "정보"],//화
+                       ["수1", "체육", "창주", "도덕", "사회", "창체"], //수
+                       ["음악", "국2", "수1", "체육", "영어", "주제", "주제"],//목
+                       ["수2", "사회", "과1", "진로", "기가", "국1"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
     }
-    if (hak == 3) {
-        if (ban == 1) {
-            var sigan = [
-                ["휴교"],
-                ["과탐", "영3", "국1", "사회", "가정", "과1"], //월
-                ["영1", "역사", "국2", "한문", "기술", "과2", "수학"],//화
-                ["수학", "체육", "스포츠", "국1", "미술", "창체"],//수
-                ["체육", "과1", "기술", "역사", "수학", "영2", "국2"],//목
-                ["과2", "체육", "수학", "사회", "음악", "영1"],//금
-                ["휴교"]
-            ];
-            var url = {
-                "국1": "https://teams.microsoft.com/l/team/19%3ada3f19a5854247bc91c8ee319324ab41%40thread.tacv2/conversations?groupId=aa5b4976-838e-4f6a-9b3c-b0f10da09021&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국2": "https://teams.microsoft.com/l/team/19%3a0c14ed94250041f7b3f9765bebf70b89%40thread.tacv2/conversations?groupId=f2fe8cab-5d42-4e36-b943-54316ea8d059&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "수학": "https://teams.microsoft.com/l/team/19%3adafd8d8ec598441f9989bcae83359df8%40thread.tacv2/conversations?groupId=3fd2ba4f-423e-4727-8154-dd1b27f3864d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영1": "https://teams.microsoft.com/l/team/19%3a39fb258332e9491a9e29f1c0e1237d0b%40thread.tacv2/conversations?groupId=2d74460e-0f78-430b-941d-0f6973d47134&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영2": "https://teams.microsoft.com/l/team/19%3a7aa3c762a24e4f29b8f5d81fff4fbc18%40thread.tacv2/conversations?groupId=99ca7771-1c6e-4917-a702-2b04c708fe66&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영3": "https://teams.microsoft.com/l/team/19%3aa6dfebd2f45a4ea2a8f090e1f1b2fff3%40thread.tacv2/conversations?groupId=fdd7d0ca-1711-4dc3-9563-083f9a14000c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과1": "https://teams.microsoft.com/l/team/19%3a7e7b03a8687a425fb6ae8753babf1e26%40thread.tacv2/conversations?groupId=b13fb2f3-9844-412d-b1fd-bd0b74c87eac&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과2": "https://teams.microsoft.com/l/team/19%3a99df1142e90e4aea90f7f667d708a00f%40thread.tacv2/conversations?groupId=78bc81f8-82ad-4910-a510-7ec1d1ed445b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과탐": "https://teams.microsoft.com/l/team/19%3a66d39b7ffebd49d9be6e8c173d3ff67c%40thread.tacv2/conversations?groupId=eb42d5fe-bae4-43c8-98e6-86bd273a29c2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "기술": "https://teams.microsoft.com/l/team/19%3ab3dfab0d25df431fa729d1a5e1b33764%40thread.tacv2/conversations?groupId=199258d2-bf0b-4b80-b790-6740908b34f3&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "가정": "https://teams.microsoft.com/l/team/19%3ad7e92638dc2b46e9853c347c0c507914%40thread.tacv2/conversations?groupId=05109278-cb3f-4f76-8799-76b006891e39&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "사회": "https://teams.microsoft.com/l/team/19%3af9f9650e7f284e31bf44521c218e3956%40thread.tacv2/conversations?groupId=b37d7cd6-b975-4975-bce6-2c1b1a79a817&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "한문": "https://teams.microsoft.com/l/team/19%3a83fba9be23b24e9cb9a45a0437496b4d%40thread.tacv2/conversations?groupId=0153b033-cf65-45da-8b0a-5c3b939e883a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "체육": "https://teams.microsoft.com/l/team/19%3a2d8582e6419c45b7804807289db12daa%40thread.tacv2/conversations?groupId=ddeaddda-69f0-4489-8125-88389b1d30bb&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "음악": "https://teams.microsoft.com/l/team/19%3aa060f6dc80514ab8835fc489958d2ca0%40thread.tacv2/conversations?groupId=778fcbab-e7c6-403e-88b1-74577389c72c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "역사": "https://teams.microsoft.com/l/team/19%3a9b5f888719a64f2ba384c36618774b08%40thread.tacv2/conversations?groupId=eb19fc19-610c-43a7-91c8-51d679db906f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "미술": "https://teams.microsoft.com/l/team/19%3ab724023d2b2d49689d1e911b7bb4fafa%40thread.tacv2/conversations?groupId=36fe27af-dbd1-4258-9619-2362438e2d1e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "조종례": "https://teams.microsoft.com/l/team/19%3a9c043ca8c7b94d3a88b141d3fbbd0e5f%40thread.tacv2/conversations?groupId=eab83088-a954-49b4-ac82-f60978436307&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
-            };
-        }
-        if (ban == 2) {
-            var sigan = [
-                ["휴교"],
-                ["영1", "사회", "과1", "수학", "미술", "과2", "없음"], //월
-                ["국2", "기술", "체육", "수학", "가정", "한문", "영3"], //화
-                ["역사", "국1", "스포츠", "과2", "체육", "창체", "없음"], //수
-                ["과탐", "수학", "영1", "체육", "과1", "국1", "사회"], //목
-                ["기술", "국2", "음악", "역사", "수학", "영2"], //금
-                ["휴교"]
-            ];
-            var url = {
-                "국1": "https://teams.microsoft.com/l/team/19%3a89f5f20fb6d647e7ad5e0b064bd9a438%40thread.tacv2/conversations?groupId=2b4f59e9-5009-405e-ad0d-cdd19de62a9a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국2": "https://teams.microsoft.com/l/team/19%3a6439e3e96ee048c5969c8704f70acbd6%40thread.tacv2/conversations?groupId=03167390-5562-480a-8d5e-64e85de5a1ca&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "수학": "https://teams.microsoft.com/l/team/19%3ab884ea66cb904d998337bbd05a7950a2%40thread.tacv2/conversations?groupId=7e14d005-c742-4158-b722-dfed6b3e24bf&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "사회": "https://teams.microsoft.com/l/team/19%3a0f78964e94af4fb899847711f10b9580%40thread.tacv2/conversations?groupId=0573b072-4439-48fd-907e-40c0a05053e2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영1": "https://teams.microsoft.com/l/team/19%3a9cc6173dddb147db8e7fcdba029187b4%40thread.tacv2/conversations?groupId=27b5feb6-98ab-4c4e-b1c6-2769a3ec1506&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영2": "https://teams.microsoft.com/l/team/19%3a74906629ae19401e812ff3cf0137c78d%40thread.tacv2/conversations?groupId=c957fac1-2dcb-496d-b970-eb406c5e71c3&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영3": "https://teams.microsoft.com/l/team/19%3aaa57430ad01a47568ddbb2e261920158%40thread.tacv2/conversations?groupId=43ea6c6f-542a-4a14-ab3c-04c1ce17e154&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과1": "https://teams.microsoft.com/l/team/19%3a57a40377ca3f48db9140049a2f4a4c0a%40thread.tacv2/conversations?groupId=1e8d96fb-8925-40f2-bd63-74e9dc92ce9e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과2": "https://teams.microsoft.com/l/team/19%3aba1abd25d585421aaa3c693b3abfe1df%40thread.tacv2/conversations?groupId=b0ef53a1-99eb-47e4-a436-c1ed1de1366c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "역사": "https://teams.microsoft.com/l/team/19%3aa6ffcf18b1e94801b35a8220985d783f%40thread.tacv2/conversations?groupId=3fdedc43-7d82-4ae8-854a-4e87645ded1e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "가정": "https://teams.microsoft.com/l/team/19%3af654879415184a12ab25b79bd5445aa4%40thread.tacv2/conversations?groupId=8ee87cb3-eeba-4c94-9d91-78450c9a03b2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "기술": "https://teams.microsoft.com/l/team/19%3a7967ccb5f07c4a51930c2eb5c06968e4%40thread.tacv2/conversations?groupId=f879cc3a-7b9c-4a05-b4c8-eee3356c5945&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "음악": "https://teams.microsoft.com/l/team/19%3a0b6eff230158411aa2c23f85704b80f0%40thread.tacv2/conversations?groupId=81548146-60dc-46ac-a21b-0877e73e2b68&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과탐": "https://teams.microsoft.com/l/team/19%3a694565de165c4f62a272e7eaa24efa7a%40thread.tacv2/conversations?groupId=ec84c89b-8bba-4463-b5b1-1d4a62129ff6&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "미술": "https://teams.microsoft.com/l/team/19%3ab3d8639fe545424abc9270530785e4d1%40thread.tacv2/conversations?groupId=2f258fda-4a11-40d2-90b2-6d19ec9da5ce&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "체육": "https://teams.microsoft.com/l/team/19%3ac7aa9a8cd4844e2fa56986d023fb8a02%40thread.tacv2/conversations?groupId=a0aeece5-e53b-41c7-a830-6c3d1417cbc7&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "한문": "https://teams.microsoft.com/l/team/19%3a962cb3ebe8474e4d808ab4748d4ecc5e%40thread.tacv2/conversations?groupId=59a7d940-ce98-4ae5-96e2-9255c2d88501&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "조종례": "https://teams.microsoft.com/l/team/19%3a065d4accecde4f2aa741dc9525e97f7b%40thread.tacv2/conversations?groupId=40d968ea-afea-465d-8c3b-8412125f12bf&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
-            };
-        }
-        if (ban == 3) {
-            var sigan = [
-                ["휴교"], //일
-                ["과1", "수학", "기술", "국2", "과2", "역사"], //월
-                ["체육", "국1", "과2", "영1", "사회", "수학", "과1"], //화
-                ["미술", "수학", "스포츠", "영1", "한문", "창체"], //수
-                ["사회", "국2", "영2", "기술", "체육", "수학", "과탐"], //목
-                ["음악", "가정", "국1", "체육", "영3", "역사"], //금
-                ["휴교"] //토
-            ]; //3학년 3반
-            var url = {
-                "조종례": "https://teams.microsoft.com/l/team/19%3a5e132ad0382545b0b40ba342785822d8%40thread.tacv2/conversations?groupId=8d3fb881-c399-4b55-87cc-c73285baa822&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "한문": "https://teams.microsoft.com/l/team/19%3af8e9359e80ba4b1db3cfd9405f7c36b6%40thread.tacv2/conversations?groupId=7db490b4-ee02-4ac8-babb-d75cf6b3d3dd&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영1": "https://teams.microsoft.com/l/team/19%3a72d196eb1f3646299ba55a1b44f54591%40thread.tacv2/conversations?groupId=5a439b9b-58ff-43f7-8108-85c2a858e8ce&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영3": "https://teams.microsoft.com/l/team/19%3a72d196eb1f3646299ba55a1b44f54591%40thread.tacv2/conversations?groupId=5a439b9b-58ff-43f7-8108-85c2a858e8ce&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "미술": "https://teams.microsoft.com/l/team/19%3aed35658f96dd4f59b1540fcf15afc550%40thread.tacv2/conversations?groupId=0b8bcf77-2d76-4569-9a73-cd8074f70024&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "수학": "https://teams.microsoft.com/l/team/19%3a83e69172b77d4f7493cdcb1010690365%40thread.tacv2/conversations?groupId=705513b9-a66d-4be6-9fe9-c5b47ae5718e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "기술": "https://teams.microsoft.com/l/team/19%3a30bc4482fa0744a4a4f2208ed4c18c1f%40thread.tacv2/conversations?groupId=6d394971-f460-4957-a6af-f55f732736e2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과1": "https://teams.microsoft.com/l/team/19%3a09b9436187144e71a8db1a4340c39c5c%40thread.tacv2/conversations?groupId=c1fd1652-e98a-457e-b807-52d23e5608fa&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "사회": "https://teams.microsoft.com/l/team/19%3a2a97b498f0dd43d1aa793687bc811904%40thread.tacv2/conversations?groupId=1365859e-2a87-4a99-ba85-13d221c84e1e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과2": "https://teams.microsoft.com/l/team/19%3a7c6b4624aded475fa2d922fd6562441e%40thread.tacv2/conversations?groupId=b96c6d09-cb5d-4ecb-bcd0-d4eb9c4d6c39&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국1": "https://teams.microsoft.com/l/team/19%3a49f38169adf64390b864cc5b8d300bab%40thread.tacv2/conversations?groupId=70a2e876-4e8c-4771-99ff-825f240490e0&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "체육": "https://teams.microsoft.com/l/team/19%3a984ebc5aecb84ccab24dbd13a31fd481%40thread.tacv2/conversations?groupId=30222789-853f-4e52-8748-52916ed81bd8&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영2": "https://teams.microsoft.com/l/team/19%3ad3d2433e3d9141c19228e49753b5eb5a%40thread.tacv2/conversations?groupId=9304d748-4593-4b59-8d75-86a5a1c5225a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "역사": "https://teams.microsoft.com/l/team/19%3a0ad856c60fd643f7b4dc10dbc460dff6%40thread.tacv2/conversations?groupId=d92dbc46-7d56-4fce-84fd-a21520c51bd1&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국2": "https://teams.microsoft.com/l/team/19%3aeee6ddb7a25d48b09ff0eecc20e06d5e%40thread.tacv2/conversations?groupId=9ff6ac57-1577-466a-8edf-2028e65e5c6f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과탐": "https://teams.microsoft.com/l/team/19%3aae0eb6f666e14f1f8d20702a115e1455%40thread.tacv2/conversations?groupId=351ff501-e100-4d19-90e4-0aca0fb5b1a4&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "음악": "https://teams.microsoft.com/l/team/19%3a929fc06ee1fb4bac83284c22f7a71492%40thread.tacv2/conversations?groupId=8d3ec398-909b-47c9-93ed-9c5e42199734&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "가정": "https://teams.microsoft.com/l/team/19%3adf50cc7db65940ad8f2f341adfce88fc%40thread.tacv2/conversations?groupId=8989edb8-36a2-4b83-815c-37cb17e09a40&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
-            };
-        }
-        if (ban == 4) {
-            var sigan = [
-                ["휴교"], //일
-                ["미술", "체육", "과2", "영1", "국1", "사회"],//월
-                ["기술", "수학", "과1", "국2", "과탐", "사회", "역사"],//화
-                ["가정", "영1", "스포츠", "수학", "기술", "창체"],//수
-                ["수학", "영3", "한문", "국2", "역사", "과2", "체육"],//목
-                ["수학", "국1", "영2", "과1", "체육", "음악"],//금
-                ["휴교"] //토
-            ];
-            var url = {
-                "국2": "https://teams.microsoft.com/l/team/19%3a0fcd403023934cc4b266a2c0a253d719%40thread.tacv2/conversations?groupId=e0ac226c-bf06-48ff-8d7c-212749583901&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국1": "https://teams.microsoft.com/l/team/19%3a337abf3ec3b24e388258095ed0f09466%40thread.tacv2/conversations?groupId=19157625-0db0-468a-adb7-cbe24dfcad5b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "체육": "https://teams.microsoft.com/l/team/19%3a3adb106873164005902d814248f92275%40thread.tacv2/conversations?groupId=99731193-1f4f-43c0-a9f5-3ea20a9cb939&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "가정": "https://teams.microsoft.com/l/team/19%3a6643437c93cb43b2bfd4d27d11aea87a%40thread.tacv2/conversations?groupId=4d674b24-9f4d-4d53-8eb0-af9fd5b77b91&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "수학": "https://teams.microsoft.com/l/team/19%3a8660850a29704145b6491fd7d59e250a%40thread.tacv2/conversations?groupId=45e25bc4-7b94-4310-86d6-0f5c0a542118&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과탐": "https://teams.microsoft.com/l/team/19%3a8fdb2d2bdfe9433fb2d6c5272fe3ea12%40thread.tacv2/conversations?groupId=e955c462-92e5-4a3c-ae80-b1fbf57c60dc&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "기술": "https://teams.microsoft.com/l/team/19%3a9bec29d742d6496d895ca5d4b448b3a6%40thread.tacv2/conversations?groupId=077d80a0-2190-4f69-9cb3-405da9c6dc46&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과2": "https://teams.microsoft.com/l/team/19%3a39a0b014f024448fbbc734d5c4bcc7c2%40thread.tacv2/conversations?groupId=42a00ab9-fd43-455d-b972-0cdfb029b5e2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과1": "https://teams.microsoft.com/l/team/19%3a21c5ae8b6aa9461e8b41166c22186db2%40thread.tacv2/conversations?groupId=ec731105-3602-4bb1-b4d1-344f3348a9b2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "사회": "https://teams.microsoft.com/l/team/19%3aa5cb32fbf2174ec2b91ce073c72e4981%40thread.tacv2/conversations?groupId=53367689-054a-4dc0-9a8f-bb9ac0c8bb2a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "역사": "https://teams.microsoft.com/l/team/19%3a4f989053370844e5a3d98344f99fa001%40thread.tacv2/conversations?groupId=2ea4b701-b488-4c70-be2b-616e77347f05&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영2": "https://teams.microsoft.com/l/team/19%3a2d2ec8df60104b619c4a6b1274ec1c12%40thread.tacv2/conversations?groupId=339975b9-c0d2-41af-9b58-07e2c35d6b07&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영1": "https://teams.microsoft.com/l/team/19%3a60e45597f85c42ce99bee83b6e56141a%40thread.tacv2/conversations?groupId=ec5efb94-85e0-4da2-81d3-2e229fb5cfef&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영3": "https://teams.microsoft.com/l/team/19%3a60e45597f85c42ce99bee83b6e56141a%40thread.tacv2/conversations?groupId=ec5efb94-85e0-4da2-81d3-2e229fb5cfef&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "음악": "https://teams.microsoft.com/l/team/19%3a7bdfd4a2892540a6b2da98a636563dcf%40thread.tacv2/conversations?groupId=c8e99fd6-2dbc-4268-a72d-7b8610e1ffc2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "한문": "https://teams.microsoft.com/l/team/19%3a0d9bb666f1784606b79ebcaa9351e6cb%40thread.tacv2/conversations?groupId=c6bcc51e-5aaf-48f1-b157-46af2bdccb88&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "조종례": "https://teams.microsoft.com/l/team/19%3ae47b5a67777d4df19ef3e5aff8a85921%40thread.tacv2/conversations?groupId=e61d0b2d-d66d-45cf-a9f2-9330da53269e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
-            };
-        }
-        if (ban == 5) {
-            var sigan = [
-                ["휴교"], //일
-                ["한문", "수학", "체육", "미술", "역사", "국1", "없음"],//월
-                ["과1", "영1", "사회", "과2", "기술", "국2", "수학"],//화
-                ["음악", "영2", "수학", "스포츠", "과탐", "창체", "없음"],// 수
-                ["역사", "체육", "가정", "수학", "사회", "영1", "국1"],//목
-                ["체육", "영3", "국2", "과2", "과1", "기술", "없음"],// 금
-                ["휴교"] //토
-            ];
-            var url = {
-                "국2": "https://teams.microsoft.com/l/team/19%3a232ab74b95b04749b8e04fc3729e197b%40thread.tacv2/conversations?groupId=b74b474a-e65e-4f29-b075-c5b8d159af2f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "수학": "https://teams.microsoft.com/l/team/19%3aec3688ce49f14b7cae9e9b08c4e6f895%40thread.tacv2/conversations?groupId=ab256b7d-e2c5-4e39-a79f-e31132768503&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "사회": "https://teams.microsoft.com/l/team/19%3ad1b85b951190459c974eeb258466259b%40thread.tacv2/conversations?groupId=52988a4a-70da-40b0-ab2a-a6faa40667f2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "역사": "https://teams.microsoft.com/l/team/19%3a43b4febd959e4243bc6668c43fa9481b%40thread.tacv2/conversations?groupId=2e810ebb-ac2f-4514-bef6-ca2b5c1b1294&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과1": "https://teams.microsoft.com/l/team/19%3a330266978650491b8182d86cc707f05a%40thread.tacv2/conversations?groupId=fb581542-ac35-4852-99a9-665997062c98&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과2": "https://teams.microsoft.com/l/team/19%3a85b188fed15b42b1989f858a7c1ca7f1%40thread.tacv2/conversations?groupId=a756f45e-668c-4471-be4a-189893b3c173&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과탐": "https://teams.microsoft.com/l/team/19%3a7ecd5a9609834e309d76af543bc5db93%40thread.tacv2/conversations?groupId=9d3f71c4-233b-40d2-ba84-37e0ab700a20&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "기술": "https://teams.microsoft.com/l/team/19%3afcc2de37fa1e4a31ab925c63e9990457%40thread.tacv2/conversations?groupId=403c6146-6006-48c9-a1f6-6122af41b50d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "가정": "https://teams.microsoft.com/l/team/19%3a0fbc6b6ea1f74611a1753614ae371568%40thread.tacv2/conversations?groupId=abdd31d7-a490-40f6-946c-bf8bf4b5f98d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "한문": "https://teams.microsoft.com/l/team/19%3aa2321052ea154b7d8489dc0826195959%40thread.tacv2/conversations?groupId=2b028492-4f42-4455-aa03-28dc2fccf170&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영1": "https://teams.microsoft.com/l/team/19%3a6a69aee39e5c425c84b91670e5208fa7%40thread.tacv2/conversations?groupId=819e8051-b571-43c5-95fe-99075a70ba74&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영3": "https://teams.microsoft.com/l/team/19%3a6a69aee39e5c425c84b91670e5208fa7%40thread.tacv2/conversations?groupId=819e8051-b571-43c5-95fe-99075a70ba74&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영2": "https://teams.microsoft.com/l/team/19%3a14a57830d2c44e5f96f9314deba54fbf%40thread.tacv2/conversations?groupId=878f8c00-1ea3-4591-9bfa-71300b25fea4&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "체육": "https://teams.microsoft.com/l/team/19%3a94f3f46b49184e2ab1cce2b993352913%40thread.tacv2/conversations?groupId=cde9fbcc-72a6-4cd2-8eec-397ff4215699&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "음악": "https://teams.microsoft.com/l/team/19%3a3088a5db0eb14044a5760d3de25d80a4%40thread.tacv2/conversations?groupId=adf1c865-709d-40de-99f9-ce9b5693147d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "미술": "https://teams.microsoft.com/l/team/19%3ae7d3aa9b63ba41cfb32c92f477ccc248%40thread.tacv2/conversations?groupId=64e97410-dc21-4019-9903-7cbe6da9e961&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "조종례": "https://teams.microsoft.com/l/team/19%3a2ce7ae4c94b94155bdce62079b0a10fe%40thread.tacv2/conversations?groupId=b6ed5f2d-a1a9-45c2-8633-ea6bee740c1c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
-            };
-        }
-        if (ban == 6) {
-            var sigan = [
-                ["휴교"], //일
-                ["수학", "국2", "역사", "과1", "미술", "영1"], //월
-                ["가정", "사회", "체육", "국1", "영1", "기술", "과2"], //화
-                ["국1", "수학", "과탐", "스포츠", "음악", "창체"], //수
-                ["기술", "영2", "체육", "한문", "국2", "과1", "수학"], //목
-                ["영3", "과2", "역사", "체육", "사회", "수학"], //금
-                ["휴교"] //토
-            ];
-            var url = {
-                "수학": "https://teams.microsoft.com/l/team/19%3aeeee2527d10048dab1d9c402cc095c3b%40thread.tacv2/conversations?groupId=13cd9718-19c1-4ffb-9142-7583c832ac63&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국2": "https://teams.microsoft.com/l/team/19%3abd016aed0f224782a9acd26eb403b396%40thread.tacv2/conversations?groupId=d3e650b5-b29d-4287-94fb-aeb1873cc2a4&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "역사": "https://teams.microsoft.com/l/team/19%3a1ea87fb2e0f64b13b63a2206139f202f%40thread.tacv2/conversations?groupId=27afa852-56b0-476e-8be5-c82d4aeca5bc&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과1": "https://teams.microsoft.com/l/team/19%3aa040d2866867489f973e22dcdf97ed78%40thread.tacv2/conversations?groupId=015403fb-f01d-453c-88d8-0b17d40306fa&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "미술": "https://teams.microsoft.com/l/team/19%3a692bd7ac60d44a9980e43be1b37badb3%40thread.tacv2/conversations?groupId=7489bc4a-80bd-4745-beb8-21a90380f4bf&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영1": "https://teams.microsoft.com/l/team/19%3a0d5bf5e151144e038c378b1dae743f3d%40thread.tacv2/conversations?groupId=c9ee8095-5717-4ae8-b1b6-8f44f60a5c6b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "가정": "https://teams.microsoft.com/l/team/19%3a1c9e3b23dec34178a56a2630df8cf5e1%40thread.tacv2/conversations?groupId=836c7126-1afc-4550-ab59-127d74af331f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "사회": "https://teams.microsoft.com/l/team/19%3aa9692a3aec3348db8f4f0fe493656c48%40thread.tacv2/conversations?groupId=933f2975-dbad-4400-8d77-8b4f6fbc4cae&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "체육": "https://teams.microsoft.com/l/team/19%3ad8a2e68f817742aba2f757db44ee7bf9%40thread.tacv2/conversations?groupId=67cb6554-345e-4888-8356-f9e062078dbc&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국1": "https://teams.microsoft.com/l/team/19%3ac2a6bdfb02614dfeac326e801d36e15f%40thread.tacv2/conversations?groupId=547041bf-b4aa-42bd-bfba-b9ba73cd3c3c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "기술": "https://teams.microsoft.com/l/team/19%3a45f88765f2e3416bb2059ac79198cb00%40thread.tacv2/conversations?groupId=b68c3769-4200-458d-a76f-a657ad3add06&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과2": "https://teams.microsoft.com/l/team/19%3a7b592dc015ab4a389f491d6ae8778056%40thread.tacv2/conversations?groupId=8a0f00a0-a185-4eee-b7d8-c5a971e59784&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과탐": "https://teams.microsoft.com/l/team/19%3abad69474eb5344d89fdbd6b933024f82%40thread.tacv2/conversations?groupId=e20aaba8-bcb4-468d-a923-5e23a972e56d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "음악": "https://teams.microsoft.com/l/team/19%3a6f78d446d8a146a0be53e1ac6955712a%40thread.tacv2/conversations?groupId=b0877c94-767b-4526-af62-095252da20d6&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영2": "https://teams.microsoft.com/l/team/19%3a302202cbbc7447bdb6005027dc17dda1%40thread.tacv2/conversations?groupId=ac0879f5-5010-4ca0-828a-c1bdfb7e3513&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "한문": "https://teams.microsoft.com/l/team/19%3ab31a7f92535a437fbed2ff3fec880414%40thread.tacv2/conversations?groupId=9f8c387e-d96d-4edd-a34f-3e240eb7039e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영3": "https://teams.microsoft.com/l/team/19%3a0d5bf5e151144e038c378b1dae743f3d%40thread.tacv2/conversations?groupId=c9ee8095-5717-4ae8-b1b6-8f44f60a5c6b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "조종례": "https://teams.microsoft.com/l/team/19%3a4c1de38d5bad4c56a4af453516a417f3%40thread.tacv2/conversations?groupId=d44701bf-6c1f-4d38-83e8-83cd9fef2aa4&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
-            };
-        }
-        if (ban == 7) {
-            var sigan = [
-                ["휴교"], //일
-                ["국2", "과2", "영1", "음악", "수학", "기술"], //월
-                ["수학", "체육", "가정", "과1", "국1", "역사", "영1"], //화
-                ["사회", "과탐", "과2", "스포츠", "국2", "창체"], //수
-                ["체육", "역사", "과1", "사회", "영3", "수학", "기술"], //목
-                ["수학", "한문", "미술", "영2", "체육", "국1"], //금
-                ["휴교"] //토
-            ]; //3학년 7반
-            var url = {
-                "체육": "https://teams.microsoft.com/l/team/19%3afd6d9f9a93604e00ae2e8a92fefd25c9%40thread.tacv2/conversations?groupId=f5f4426d-0cc5-49a9-acbc-7523b5d49720&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "가정": "https://teams.microsoft.com/l/team/19%3a3cd87935e77a4725bf6310c95e3d2f2d%40thread.tacv2/conversations?groupId=d3de4e80-9014-41ed-a80a-15600f7017ed&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국1": "https://teams.microsoft.com/l/team/19%3a3d1f249252024c919d89004ff361d408%40thread.tacv2/conversations?groupId=014803d2-a8a0-490c-93e4-98a55c3447db&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "국2": "https://teams.microsoft.com/l/team/19%3a79b55ae6cd5748a1b810684022d1de9b%40thread.tacv2/conversations?groupId=a70d37cc-48d1-4199-a2f0-a6954a994b6e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영2": "https://teams.microsoft.com/l/team/19%3a7d6745f13fc84d9d96bcbb853054871f%40thread.tacv2/conversations?groupId=aa6af451-ae6a-4514-9448-d63a254b7806&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "기술": "https://teams.microsoft.com/l/team/19%3a30a20ddfa5cd4fc7b98caa18c5efbe50%40thread.tacv2/conversations?groupId=eb4374de-02f9-42b9-ae6f-73d2c04fa2bf&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "미술": "https://teams.microsoft.com/l/team/19%3a35b088699fad4fe38d47819a5aa4a2f9%40thread.tacv2/conversations?groupId=110ab274-12e6-46bc-acb9-abbd05d95810&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "음악": "https://teams.microsoft.com/l/team/19%3abdd59d759f4346239b7af3f7891886dc%40thread.tacv2/conversations?groupId=82de6f16-ede2-452a-8650-35e30065d7d1&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "수학": "https://teams.microsoft.com/l/team/19%3aa558376fd04a4577ade75b98d151f585%40thread.tacv2/conversations?groupId=4db6a65b-950d-44ea-ae7a-e40bf4290865&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과2": "https://teams.microsoft.com/l/team/19%3a2a9bb35d22d24f94b72775caf6be843a%40thread.tacv2/conversations?groupId=7a0eb1b1-5ca1-4aac-926c-b75e4640d93e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영1": "https://teams.microsoft.com/l/team/19%3a51a7c83e82654879a2745bfe3929f5e6%40thread.tacv2/conversations?groupId=c1e5760f-a7e7-48d8-85ca-8686a594fd0d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "영3": "https://teams.microsoft.com/l/team/19%3a51a7c83e82654879a2745bfe3929f5e6%40thread.tacv2/conversations?groupId=c1e5760f-a7e7-48d8-85ca-8686a594fd0d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과1": "https://teams.microsoft.com/l/team/19%3a2bb9bc6478264b73ad6b93718ed446a5%40thread.tacv2/conversations?groupId=7965163a-cc38-42de-b585-ca7da339d306&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "사회": "https://teams.microsoft.com/l/team/19%3ad28308d2b8494b1fa81a848838d067a6%40thread.tacv2/conversations?groupId=96852265-62d1-4958-aeee-a8e43e928fee&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "역사": "https://teams.microsoft.com/l/team/19%3abf4abe68c8f2419cafc7602f407d4b4d%40thread.tacv2/conversations?groupId=4359437d-b962-40d1-add7-6a4d3e9c7f47&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "한문": "https://teams.microsoft.com/l/team/19%3aefc35282538340f9a01e1f788f45947e%40thread.tacv2/conversations?groupId=cce95324-8fc9-49ef-961b-8ab518cb031d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "과탐": "https://teams.microsoft.com/l/team/19%3a4bb64eaed80047498cfb02e35f0fc26c%40thread.tacv2/conversations?groupId=f35b552b-468d-4e4a-9e25-2f02d6299ff2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
-                "조종례": "https://teams.microsoft.com/l/team/19%3a76ee947f01fb4aaf8534023b55e747d5%40thread.tacv2/conversations?groupId=797d6fb7-10d5-48e0-b261-7aea62d1330b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
-            };
-        }
+    if (hak == 1 && ban == 3) {
+        //1학년 3반
+        var sigan = [
+                       ["휴교"],
+                       ["기가", "국2", "영어", "수1", "예체", "예체"], //월
+                       ["사회", "영어", "과1", "음악", "수2", "스포츠", "국1"],//화
+                       ["창주", "수1", "사회", "기가", "체육", "창체"], //수
+                       ["진로", "국1", "과2", "체육", "사회", "주제", "주제"],//목
+                       ["체육", "과1", "도덕", "국2", "음악", "정보"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
     }
+    if (hak == 1 && ban == 4) {
+        //1학년 4반
+        var sigan = [
+                       ["휴교"],
+                       ["수1", "기가", "과1", "음악", "예체", "예체"], //월
+                       ["진로", "사회", "국1", "수2", "정보", "스포츠", "영어"],//화
+                       ["체육", "과1", "국2", "창주", "음악", "창체"], //수
+                       ["체육", "사회", "기가", "국1", "과2", "주제", "주제"],//목
+                       ["도덕", "수1", "사회", "국2", "영어", "체육"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 1 && ban == 5) {
+        //1학년 5반
+        var sigan = [
+                       ["휴교"],
+                       ["국1", "진로", "체육", "기가", "예체", "예체"], //월
+                       ["도덕", "과1", "정보", "수1", "국1", "사회", "스포츠"],//화
+                       ["사회", "국2", "과2", "음악", "수1", "창체"], //수
+                       ["영어", "과1", "수2", "사회", "체육", "주제", "주제"],//목
+                       ["기가", "음악", "영어", "체육", "국2", "창주"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "조종례" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 1 && ban == 6) {
+        //1학년 6반
+        var sigan = [
+                       ["휴교"],
+                       ["음악", "수1", "사회", "국2", "예체", "예체"], //월
+                       ["수1", "체육", "과1", "영어", "기가", "사회", "스포츠"],//화
+                       ["창주", "도덕", "국2", "사회", "진로", "창체"], //수
+                       ["국1", "체육", "음악", "영어", "과2", "주제", "주제"],//목
+                       ["정보", "기가", "체육", "과1", "국1", "수2"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "조종례" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 1 && ban == 7) {
+        //1학년 7반
+        var sigan = [
+                       ["휴교"],
+                       ["영어", "체육", "국2", "음악", "예체", "예체"], //월
+                       ["정보", "기가", "체육", "사회", "과1", "수1", "스포츠"],//화
+                       ["국2", "체육", "창주", "수2", "기가", "창체"], //수
+                       ["사회", "수1", "음악", "과2", "국1", "주제", "주제"],//목
+                       ["진로", "과1", "국1", "도덕", "사회", "영어"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "조종례" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+                   
+   
+    if (hak == 2 && ban == 1) {
+        //2학년 1반
+        var sigan = [
+                       ["휴교"],
+                       ["역사", "수학", "체육", "영3", "도2", "과2"], //월
+                       ["역사", "체2", "영3", "스포츠", "국1", "기가", "과1"],//화
+                       ["도1", "수학", "영2", "과1", "국2", "창체"], //수
+                       ["체육", "미술", "국2", "한문", "역사", "과3", "수학"],//목
+                       ["국1", "영1", "기가", "도1", "수학", "음악"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 2 && ban == 2) {
+        //2학년 2반
+        var sigan = [
+                       ["휴교"],
+                       ["과2", "체육", "영2", "기가", "수학", "도1"], //월
+                       ["체육", "음악", "과1", "스포츠", "역사", "국2", "수학"],//화
+                       ["영3", "국1", "역사", "미술", "한문", "창체"], //수
+                       ["과1", "영3", "과3", "국1", "수학", "체2", "도2"],//목
+                       ["국2", "기가", "수학", "역사", "영1", "도1"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 2 && ban == 3) {
+        //2학년 3반
+        var sigan = [
+                       ["휴교"],
+                       ["도2", "과3", "기가", "수학", "체육", "영3"], //월
+                       ["영1", "수학", "국1", "스포츠", "도1", "과1", "역사"],//화
+                       ["수학", "국2", "기가", "영3", "체2", "창체"], //수
+                       ["과2", "수학", "역사", "영2", "음악", "한문", "국2"],//목
+                       ["도1", "미술", "체육", "과1", "국1", "역사"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 2 && ban == 4) {
+        //2학년 4반
+        var sigan = [
+                       ["휴교"],
+                       ["과1", "역사", "국1", "도2", "과3", "영2"], //월
+                       ["수학", "도1", "영1", "스포츠", "기가", "한문", "국1"],//화
+                       ["체육", "음악", "수학", "과2", "역사", "창체"], //수
+                       ["도1", "역사", "과1", "체육", "국2", "수학", "영3"],//목
+                       ["수학", "체2", "미술", "국2", "기가", "영3"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 2 && ban == 5) {
+        //2학년 5반
+        var sigan = [
+                       ["휴교"],
+                       ["기가", "수학", "영3", "과3", "도1", "국1"], //월
+                       ["음악", "과1", "국2", "역사", "스포츠", "영3", "수학"],//화
+                       ["영2", "체2", "도1", "국1", "수학", "창체"], //수
+                       ["미술", "수학", "체육", "과2", "도2", "역사", "영1"],//목
+                       ["체육", "과1", "역사", "한문", "국2", "기가"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 2 && ban == 6) {
+        //2학년 6반
+        var sigan = [
+                       ["휴교"],
+                       ["과3", "한문", "도1", "역사", "수학", "체2"], //월
+                       ["영3", "국1", "체육", "수학", "스포츠", "과2", "기가"],//화
+                       ["과1", "역사", "미술", "영2", "국1", "창체"], //수
+                       ["국2", "도2", "수학", "기가", "영3", "음악", "체육"],//목
+                       ["역사", "국2", "도1", "수학", "과1", "영1"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 2 && ban == 7) {
+        //2학년 7반
+        var sigan = [
+                       ["휴교"],
+                       ["영3", "도2", "국2", "수학", "과1", "음악"], //월
+                       ["한문", "수학", "체2", "국2", "스포츠", "도1", "과3"],//화
+                       ["국1", "영3", "과1", "기가", "역사", "창체"], //수
+                       ["영2", "체1", "과2", "도1", "수학", "미술", "역사"],//목
+                       ["역사", "국1", "영1", "체1", "기가", "수학"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 2 && ban == 8) {
+        //2학년 8반
+        var sigan = [
+                       ["휴교"],
+                       ["수학", "도1", "과1", "영1", "국1", "미술"], //월
+                       ["국2", "역사", "기가", "영3", "스포츠", "수학", "음악"],//화
+                       ["역사", "수학", "국2", "도1", "체육", "창체"], //수
+                       ["기가", "국1", "도2", "과1", "과3", "영2", "체2"],//목
+                       ["체육", "한문", "수학", "역사", "영3", "과2"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+                                
+    if (hak == 3 && ban == 1) {
+        //3학년 1반
+        var sigan = [
+                       ["휴교"],
+                       ["미술", "과학1", "수학", "과학2", "사회", "영어1"], //월
+                       ["수학", "체육", "가정", "국어1", "과탐", "영어3", "과학1"],//화
+                       ["기술", "국어1", "스포츠", "역사", "과학2", "창체"], //수
+                       ["한문", "체육", "사회", "국어2", "역사", "음악", "영어1"],//목
+                       ["영어2", "국어2", "미술", "체육", "수학", "기술"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "조종례" : "https://teams.microsoft.com/l/team/19%3a9c043ca8c7b94d3a88b141d3fbbd0e5f%40thread.tacv2/conversations?groupId=eab83088-a954-49b4-ac82-f60978436307&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영어1" : "https://teams.microsoft.com/l/team/19%3a39fb258332e9491a9e29f1c0e1237d0b%40thread.tacv2/conversations?groupId=2d74460e-0f78-430b-941d-0f6973d47134&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영어2" : "https://teams.microsoft.com/l/team/19%3a7aa3c762a24e4f29b8f5d81fff4fbc18%40thread.tacv2/conversations?groupId=99ca7771-1c6e-4917-a702-2b04c708fe66&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영어3" : "https://teams.microsoft.com/l/team/19%3aa6dfebd2f45a4ea2a8f090e1f1b2fff3%40thread.tacv2/conversations?groupId=fdd7d0ca-1711-4dc3-9563-083f9a14000c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "기술" : "",
+                       "가정" : "https://teams.microsoft.com/l/team/19%3ad7e92638dc2b46e9853c347c0c507914%40thread.tacv2/conversations?groupId=05109278-cb3f-4f76-8799-76b006891e39&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "역사" : "https://teams.microsoft.com/l/team/19%3a9b5f888719a64f2ba384c36618774b08%40thread.tacv2/conversations?groupId=eb19fc19-610c-43a7-91c8-51d679db906f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "국어1" : "https://teams.microsoft.com/l/team/19%3ada3f19a5854247bc91c8ee319324ab41%40thread.tacv2/conversations?groupId=aa5b4976-838e-4f6a-9b3c-b0f10da09021&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "국어2" : "https://teams.microsoft.com/l/team/19%3a0c14ed94250041f7b3f9765bebf70b89%40thread.tacv2/conversations?groupId=f2fe8cab-5d42-4e36-b943-54316ea8d059&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "수학" : "https://teams.microsoft.com/l/team/19%3adafd8d8ec598441f9989bcae83359df8%40thread.tacv2/conversations?groupId=3fd2ba4f-423e-4727-8154-dd1b27f3864d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과학1" : "https://teams.microsoft.com/l/team/19%3a7e7b03a8687a425fb6ae8753babf1e26%40thread.tacv2/conversations?groupId=b13fb2f3-9844-412d-b1fd-bd0b74c87eac&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과학2" : "https://teams.microsoft.com/l/team/19%3a99df1142e90e4aea90f7f667d708a00f%40thread.tacv2/conversations?groupId=78bc81f8-82ad-4910-a510-7ec1d1ed445b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "한문" : "https://teams.microsoft.com/l/team/19%3a83fba9be23b24e9cb9a45a0437496b4d%40thread.tacv2/conversations?groupId=0153b033-cf65-45da-8b0a-5c3b939e883a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "체육" : "https://teams.microsoft.com/l/team/19%3a2d8582e6419c45b7804807289db12daa%40thread.tacv2/conversations?groupId=ddeaddda-69f0-4489-8125-88389b1d30bb&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "미술" : "https://teams.microsoft.com/l/team/19%3aPA8MUMzWzMsmuC_zCqLHR04vthwJIl_7Xt2WaJYYBQo1%40thread.tacv2/conversations?groupId=6ec919f4-a962-4c62-b4e5-01ad95f2290e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "음악" : "https://teams.microsoft.com/l/team/19%3aa060f6dc80514ab8835fc489958d2ca0%40thread.tacv2/conversations?groupId=778fcbab-e7c6-403e-88b1-74577389c72c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "사회" : "https://teams.microsoft.com/l/team/19%3af9f9650e7f284e31bf44521c218e3956%40thread.tacv2/conversations?groupId=b37d7cd6-b975-4975-bce6-2c1b1a79a817&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "역사" : "https://teams.microsoft.com/l/team/19%3a9b5f888719a64f2ba384c36618774b08%40thread.tacv2/conversations?groupId=eb19fc19-610c-43a7-91c8-51d679db906f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과탐" : "https://teams.microsoft.com/l/team/19%3a66d39b7ffebd49d9be6e8c173d3ff67c%40thread.tacv2/conversations?groupId=eb42d5fe-bae4-43c8-98e6-86bd273a29c2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
+         };
+    
+    }
+    if (hak == 3 && ban == 2) {
+        //3학년 2반
+        var sigan = [
+                       ["휴교"],
+                       ["영1", "미술", "국2", "기술", "역사", "과2"], //월
+                       ["가정", "과1", "체육", "사회", "영3", "과탐", "국2"],//화
+                       ["한문", "음악", "스포츠", "수학", "영2", "창체"], //수
+                       ["체육", "역사", "수학", "영1", "사회", "기술", "국1"],//목
+                       ["국1", "체육", "과2", "미술", "과1", "수학"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "조종례" : "https://teams.microsoft.com/l/team/19%3a065d4accecde4f2aa741dc9525e97f7b%40thread.tacv2/conversations?groupId=40d968ea-afea-465d-8c3b-8412125f12bf&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "국1" : "https://teams.microsoft.com/l/team/19%3a89f5f20fb6d647e7ad5e0b064bd9a438%40thread.tacv2/conversations?groupId=2b4f59e9-5009-405e-ad0d-cdd19de62a9a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "국2" : "https://teams.microsoft.com/l/team/19%3a6439e3e96ee048c5969c8704f70acbd6%40thread.tacv2/conversations?groupId=03167390-5562-480a-8d5e-64e85de5a1ca&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "수학" : "https://teams.microsoft.com/l/team/19%3ab884ea66cb904d998337bbd05a7950a2%40thread.tacv2/conversations?groupId=7e14d005-c742-4158-b722-dfed6b3e24bf&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "사회" : "https://teams.microsoft.com/l/team/19%3a0f78964e94af4fb899847711f10b9580%40thread.tacv2/conversations?groupId=0573b072-4439-48fd-907e-40c0a05053e2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과1" : "https://teams.microsoft.com/l/team/19%3a57a40377ca3f48db9140049a2f4a4c0a%40thread.tacv2/conversations?groupId=1e8d96fb-8925-40f2-bd63-74e9dc92ce9e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과2" : "https://teams.microsoft.com/l/team/19%3aba1abd25d585421aaa3c693b3abfe1df%40thread.tacv2/conversations?groupId=b0ef53a1-99eb-47e4-a436-c1ed1de1366c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영1" : "https://teams.microsoft.com/l/team/19%3a9cc6173dddb147db8e7fcdba029187b4%40thread.tacv2/conversations?groupId=27b5feb6-98ab-4c4e-b1c6-2769a3ec1506&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영2" : "https://teams.microsoft.com/l/team/19%3a74906629ae19401e812ff3cf0137c78d%40thread.tacv2/conversations?groupId=c957fac1-2dcb-496d-b970-eb406c5e71c3&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영3" : "https://teams.microsoft.com/l/team/19%3aaa57430ad01a47568ddbb2e261920158%40thread.tacv2/conversations?groupId=43ea6c6f-542a-4a14-ab3c-04c1ce17e154&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "역사" : "https://teams.microsoft.com/l/team/19%3aa6ffcf18b1e94801b35a8220985d783f%40thread.tacv2/conversations?groupId=3fdedc43-7d82-4ae8-854a-4e87645ded1e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "한문" : "https://teams.microsoft.com/l/team/19%3a962cb3ebe8474e4d808ab4748d4ecc5e%40thread.tacv2/conversations?groupId=59a7d940-ce98-4ae5-96e2-9255c2d88501&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과탐" : "https://teams.microsoft.com/l/team/19%3a694565de165c4f62a272e7eaa24efa7a%40thread.tacv2/conversations?groupId=ec84c89b-8bba-4463-b5b1-1d4a62129ff6&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "기술" : "https://teams.microsoft.com/l/team/19%3a2ahFp_rHqSYyF3zFYda8qZRewAAEZAaFGo953RjfpfI1%40thread.tacv2/conversations?groupId=fa473e4a-7ecf-46fb-b3c7-1cc401884eb9&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "가정" : "https://teams.microsoft.com/l/team/19%3af654879415184a12ab25b79bd5445aa4%40thread.tacv2/conversations?groupId=8ee87cb3-eeba-4c94-9d91-78450c9a03b2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "체육" : "https://teams.microsoft.com/l/team/19%3ac7aa9a8cd4844e2fa56986d023fb8a02%40thread.tacv2/conversations?groupId=a0aeece5-e53b-41c7-a830-6c3d1417cbc7&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "음악" : "https://teams.microsoft.com/l/team/19%3afab82c1922f9434e95040110864c73c9%40thread.tacv2/conversations?groupId=916d6ea4-59bb-483e-89ca-46c7a563b58f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "미술" : "https://teams.microsoft.com/l/team/19%3aTLBwiXz-j5oA_r73KdUvvHIwH5I2Ka3t5rUpnAstTe41%40thread.tacv2/conversations?groupId=a186c525-27e2-4e8c-bd57-ca2e6fbd025e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
+         };
+    
+    }
+    if (hak == 3 && ban == 3) {
+        //3학년 3반
+        var sigan = [
+                       ["휴교"],
+                       ["국2", "기술", "체육", "영1", "미술", "역사"], //월
+                       ["영1", "과탐", "한문", "수학", "과2", "국1", "역사"],//화
+                       ["사회", "수학", "스포츠", "과1", "국2", "창체"], //수
+                       ["가정", "영2", "기술", "음악", "수학", "과2", "체육"],//목
+                       ["미술", "국1", "과1", "사회", "체육", "영3"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 3 && ban == 4) {
+        //3학년 4반
+        var sigan = [
+                       ["휴교"],
+                       ["음악", "과2", "한문", "미술", "국2", "사회"], //월
+                       ["체육", "국2", "과탐", "과1", "기술", "영1", "수학"],//화
+                       ["과2", "영2", "스포츠", "가정", "체육", "창체"], //수
+                       ["과1", "영1", "역사", "국1", "체육", "수학", "기술"],//목
+                       ["사회", "역사", "수학", "영3", "국1", "미술"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "조종례" : "https://teams.microsoft.com/l/team/19%3ae47b5a67777d4df19ef3e5aff8a85921%40thread.tacv2/conversations?groupId=e61d0b2d-d66d-45cf-a9f2-9330da53269e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "음악" : "https://teams.microsoft.com/l/team/19%3a073daa7af9ce4d5f9176bf5f44f8e902%40thread.tacv2/conversations?groupId=c402b2ba-e8cf-42b2-aff9-ac03591a38e0&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과2" : "https://teams.microsoft.com/l/team/19%3a39a0b014f024448fbbc734d5c4bcc7c2%40thread.tacv2/conversations?groupId=42a00ab9-fd43-455d-b972-0cdfb029b5e2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "한문" : "https://teams.microsoft.com/l/team/19%3a0d9bb666f1784606b79ebcaa9351e6cb%40thread.tacv2/conversations?groupId=c6bcc51e-5aaf-48f1-b157-46af2bdccb88&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "미술" : "https://teams.microsoft.com/l/team/19%3aYnNJaUsVbctsfbTo2EvCYqAI7cp0SilvF_vrFq4_jWo1%40thread.tacv2/conversations?groupId=e207b5a8-6c05-460e-922b-b2e92edf9024&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "국2" : "https://teams.microsoft.com/l/team/19%3a0fcd403023934cc4b266a2c0a253d719%40thread.tacv2/conversations?groupId=e0ac226c-bf06-48ff-8d7c-212749583901&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "사회" : "https://teams.microsoft.com/l/team/19%3aa5cb32fbf2174ec2b91ce073c72e4981%40thread.tacv2/conversations?groupId=53367689-054a-4dc0-9a8f-bb9ac0c8bb2a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "체육" : "https://teams.microsoft.com/l/team/19%3a3adb106873164005902d814248f92275%40thread.tacv2/conversations?groupId=99731193-1f4f-43c0-a9f5-3ea20a9cb939&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과탐" : "https://teams.microsoft.com/l/team/19%3a8fdb2d2bdfe9433fb2d6c5272fe3ea12%40thread.tacv2/conversations?groupId=e955c462-92e5-4a3c-ae80-b1fbf57c60dc&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과1" : "https://teams.microsoft.com/l/team/19%3a21c5ae8b6aa9461e8b41166c22186db2%40thread.tacv2/conversations?groupId=ec731105-3602-4bb1-b4d1-344f3348a9b2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영1" : "https://teams.microsoft.com/l/team/19%3a60e45597f85c42ce99bee83b6e56141a%40thread.tacv2/conversations?groupId=ec5efb94-85e0-4da2-81d3-2e229fb5cfef&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "수학" : "https://teams.microsoft.com/l/team/19%3a8660850a29704145b6491fd7d59e250a%40thread.tacv2/conversations?groupId=45e25bc4-7b94-4310-86d6-0f5c0a542118&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영2" : "https://teams.microsoft.com/l/team/19%3a2d2ec8df60104b619c4a6b1274ec1c12%40thread.tacv2/conversations?groupId=339975b9-c0d2-41af-9b58-07e2c35d6b07&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "가정" : "https://teams.microsoft.com/l/team/19%3a6643437c93cb43b2bfd4d27d11aea87a%40thread.tacv2/conversations?groupId=4d674b24-9f4d-4d53-8eb0-af9fd5b77b91&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "역사" : "https://teams.microsoft.com/l/team/19%3a4f989053370844e5a3d98344f99fa001%40thread.tacv2/conversations?groupId=2ea4b701-b488-4c70-be2b-616e77347f05&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영3" : "https://teams.microsoft.com/l/team/19%3a60e45597f85c42ce99bee83b6e56141a%40thread.tacv2/conversations?groupId=ec5efb94-85e0-4da2-81d3-2e229fb5cfef&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "국1" : "https://teams.microsoft.com/l/team/19%3a337abf3ec3b24e388258095ed0f09466%40thread.tacv2/conversations?groupId=19157625-0db0-468a-adb7-cbe24dfcad5b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
+         };
+    
+    }
+    if (hak == 3 && ban == 5) {
+        //3학년 5반
+        var sigan = [
+                       ["휴교"],
+                       ["체육", "사회", "미술", "수학", "국1", "가정"], //월
+                       ["과1", "기술", "영1", "국2", "역사", "과탐", "과2"],//화
+                       ["음악", "체육", "국1", "스포츠", "영3", "창체"], //수
+                       ["국2", "수학", "영2", "체육", "미술", "역사", "한문"],//목
+                       ["수학", "기술", "영1", "과2", "사회", "과1"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "조종례" : "https://teams.microsoft.com/l/team/19%3a2ce7ae4c94b94155bdce62079b0a10fe%40thread.tacv2/conversations?groupId=b6ed5f2d-a1a9-45c2-8633-ea6bee740c1c&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "국1" : "https://teams.microsoft.com/l/team/19%3af502b3de0bba44b193503bbdf16b6380%40thread.tacv2/conversations?groupId=c35e1a89-9b49-4075-a025-89edbb888808&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "국2" : "https://teams.microsoft.com/l/team/19%3a232ab74b95b04749b8e04fc3729e197b%40thread.tacv2/conversations?groupId=b74b474a-e65e-4f29-b075-c5b8d159af2f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "수학" : "https://teams.microsoft.com/l/team/19%3aOI96aknykQ187vj9fDRa20_qZh0HvQw0wyoFZ1VOl8U1%40thread.tacv2/conversations?groupId=5e14a575-d2c5-4062-9b0e-a35ff16a724f&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "사회" : "https://teams.microsoft.com/l/team/19%3ad1b85b951190459c974eeb258466259b%40thread.tacv2/conversations?groupId=52988a4a-70da-40b0-ab2a-a6faa40667f2&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "역사" : "https://teams.microsoft.com/l/team/19%3a43b4febd959e4243bc6668c43fa9481b%40thread.tacv2/conversations?groupId=2e810ebb-ac2f-4514-bef6-ca2b5c1b1294&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과1" : "https://teams.microsoft.com/l/team/19%3a330266978650491b8182d86cc707f05a%40thread.tacv2/conversations?groupId=fb581542-ac35-4852-99a9-665997062c98&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과2" : "https://teams.microsoft.com/l/team/19%3a85b188fed15b42b1989f858a7c1ca7f1%40thread.tacv2/conversations?groupId=a756f45e-668c-4471-be4a-189893b3c173&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "과탐" : "https://teams.microsoft.com/l/team/19%3a7ecd5a9609834e309d76af543bc5db93%40thread.tacv2/conversations?groupId=9d3f71c4-233b-40d2-ba84-37e0ab700a20&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "가정" : "https://teams.microsoft.com/l/team/19%3a0fbc6b6ea1f74611a1753614ae371568%40thread.tacv2/conversations?groupId=abdd31d7-a490-40f6-946c-bf8bf4b5f98d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "기술" : "https://teams.microsoft.com/l/team/19%3afcc2de37fa1e4a31ab925c63e9990457%40thread.tacv2/conversations?groupId=403c6146-6006-48c9-a1f6-6122af41b50d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영1" : "https://teams.microsoft.com/l/team/19%3a6a69aee39e5c425c84b91670e5208fa7%40thread.tacv2/conversations?groupId=819e8051-b571-43c5-95fe-99075a70ba74&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영2" : "https://teams.microsoft.com/l/team/19%3a14a57830d2c44e5f96f9314deba54fbf%40thread.tacv2/conversations?groupId=878f8c00-1ea3-4591-9bfa-71300b25fea4&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "영3" : "https://teams.microsoft.com/l/team/19%3a6a69aee39e5c425c84b91670e5208fa7%40thread.tacv2/conversations?groupId=819e8051-b571-43c5-95fe-99075a70ba74&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "체육" : "https://teams.microsoft.com/l/team/19%3a94f3f46b49184e2ab1cce2b993352913%40thread.tacv2/conversations?groupId=cde9fbcc-72a6-4cd2-8eec-397ff4215699&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "미술" : "https://teams.microsoft.com/l/team/19%3a6a69aee39e5c425c84b91670e5208fa7%40thread.tacv2/conversations?groupId=819e8051-b571-43c5-95fe-99075a70ba74&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+                       "한문" : "https://teams.microsoft.com/l/team/19%3aa2321052ea154b7d8489dc0826195959%40thread.tacv2/conversations?groupId=2b028492-4f42-4455-aa03-28dc2fccf170&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
+         };
+    
+    }
+    if (hak == 3 && ban == 6) {
+        //3학년 6반
+        var sigan = [
+                       ["휴교"],
+                       ["과2", "영1", "역사", "미술", "과1", "수학"], //월
+                       ["역사", "사회", "체육", "한문", "수학", "국2", "과탐"],//화
+                       ["수학", "기술", "영3", "스포츠", "국1", "창체"], //수
+                       ["영1", "과1", "국2", "가정", "체육", "사회", "음악"],//목
+                       ["과2", "영2", "기술", "국1", "미술", "체육"], //금
+                       ["휴교"]
+         ];
+    
+       var url = {
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : "",
+                       "" : ""
+         };
+    
+    }
+    if (hak == 3 && ban == 7) {
+        //3학년 7반
+        var sigan = [
+                       ["휴교"],
+                       ["미술", "역사", "과1", "체육", "수학", "국2"], //월
+                       ["체육", "과2", "국1", "과탐", "영1", "기술", "사회"],//화
+                       ["미술", "영3", "한문", "스포츠", "음악", "창체"], //수
+                       ["사회", "가정", "체육", "기술", "영1", "국1", "수학"],//목
+                       ["국2", "과1", "영2", "수학", "역사", "과2"], //금
+                       ["휴교"]
+         ];
+    
+         var url = {
+            "조종례" : "https://teams.microsoft.com/l/team/19%3a76ee947f01fb4aaf8534023b55e747d5%40thread.tacv2/conversations?groupId=797d6fb7-10d5-48e0-b261-7aea62d1330b&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "체육" : "https://teams.microsoft.com/l/team/19%3afd6d9f9a93604e00ae2e8a92fefd25c9%40thread.tacv2/conversations?groupId=f5f4426d-0cc5-49a9-acbc-7523b5d49720&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "가정" : "https://teams.microsoft.com/l/team/19%3a3cd87935e77a4725bf6310c95e3d2f2d%40thread.tacv2/conversations?groupId=d3de4e80-9014-41ed-a80a-15600f7017ed&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "국1" : "https://teams.microsoft.com/l/team/19%3a3d1f249252024c919d89004ff361d408%40thread.tacv2/conversations?groupId=014803d2-a8a0-490c-93e4-98a55c3447db&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "국2" : "https://teams.microsoft.com/l/team/19%3a79b55ae6cd5748a1b810684022d1de9b%40thread.tacv2/conversations?groupId=a70d37cc-48d1-4199-a2f0-a6954a994b6e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "영2" : "https://teams.microsoft.com/l/team/19%3a7d6745f13fc84d9d96bcbb853054871f%40thread.tacv2/conversations?groupId=aa6af451-ae6a-4514-9448-d63a254b7806&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "기술" : "https://teams.microsoft.com/l/team/19%3a30a20ddfa5cd4fc7b98caa18c5efbe50%40thread.tacv2/conversations?groupId=eb4374de-02f9-42b9-ae6f-73d2c04fa2bf&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "음악" : "https://teams.microsoft.com/l/team/19%3a13bd8b94ad5f4dd480827ff32e85aec7%40thread.tacv2/conversations?groupId=1040f40a-35ea-4d20-8f0a-86cc279b0cb7&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "과2" : "https://teams.microsoft.com/l/team/19%3a2a9bb35d22d24f94b72775caf6be843a%40thread.tacv2/conversations?groupId=7a0eb1b1-5ca1-4aac-926c-b75e4640d93e&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "영1" : "https://teams.microsoft.com/l/team/19%3a51a7c83e82654879a2745bfe3929f5e6%40thread.tacv2/conversations?groupId=c1e5760f-a7e7-48d8-85ca-8686a594fd0d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "영3" : "https://teams.microsoft.com/l/team/19%3a51a7c83e82654879a2745bfe3929f5e6%40thread.tacv2/conversations?groupId=c1e5760f-a7e7-48d8-85ca-8686a594fd0d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "과1" : "https://teams.microsoft.com/l/team/19%3a2bb9bc6478264b73ad6b93718ed446a5%40thread.tacv2/conversations?groupId=7965163a-cc38-42de-b585-ca7da339d306&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "사회" : "https://teams.microsoft.com/l/team/19%3ad28308d2b8494b1fa81a848838d067a6%40thread.tacv2/conversations?groupId=96852265-62d1-4958-aeee-a8e43e928fee&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "역사" : "https://teams.microsoft.com/l/team/19%3abf4abe68c8f2419cafc7602f407d4b4d%40thread.tacv2/conversations?groupId=4359437d-b962-40d1-add7-6a4d3e9c7f47&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "한문" : "https://teams.microsoft.com/l/team/19%3aefc35282538340f9a01e1f788f45947e%40thread.tacv2/conversations?groupId=cce95324-8fc9-49ef-961b-8ab518cb031d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "과탐" : "https://teams.microsoft.com/l/team/19%3ajtibjuwT6sBgVv90FmMKDGe3gcRiVgDqivNZy7GiJK01%40thread.tacv2/conversations?groupId=2eaa7e38-09b1-4304-9016-bc895050317d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "수학" : "https://teams.microsoft.com/l/team/19%3aL29jUmzldMBEKmJunFuFsVxAoHEukj9reZQzoXZsAcg1%40thread.tacv2/conversations?groupId=41ac2337-ecbd-43f4-920e-4856120a700a&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319",
+            "미술" : "https://teams.microsoft.com/l/team/19%3ajtibjuwT6sBgVv90FmMKDGe3gcRiVgDqivNZy7GiJK01%40thread.tacv2/conversations?groupId=2eaa7e38-09b1-4304-9016-bc895050317d&tenantId=fa32bef0-f732-4dd0-be62-c9c2b1977319"
+        };
+    
+    }
+                    
+
+
+
+
     if (val == 1) {
         if (sigan == undefined) {
             if (url == undefined && sigan == undefined) {
@@ -327,7 +564,7 @@ function data(val, hak, ban, day, time) {
         return url[day];
     }
     if (val == 3) {
-        if (url == undefined) {
+        if (url == undefined || url[""] == "") {
             return 'nodata';
         }
         return url.length;
@@ -454,8 +691,10 @@ var date = now.getDate();
 var hours = now.getHours();
 var minutes = now.getMinutes();
 
+
 var day = now.getDay();
 var s1, s2, s3, s4, s5, s6, s7 = '없음';
+
 
 var ds = getParam('d')
 if (ds != '') {
@@ -616,6 +855,7 @@ function gotosu() {
     var month = now.getMonth();
     var date = now.getDate();
     var day = now.getDay();
+    
     var hours = now.getHours();
     var minutes = now.getMinutes();
     var seconds = now.getSeconds();
@@ -939,6 +1179,7 @@ function changcolor(object, color) {
     document.getElementById('ssss' + object).style.color = color;
 }
 
+
 /*
 var setTime = {
     "등교": {
@@ -1017,6 +1258,7 @@ var setTime = {
         "끝": 1520
     }
 };
+
 
 function ttsp(a, b) {
     var asddf = setTime[a][b];
