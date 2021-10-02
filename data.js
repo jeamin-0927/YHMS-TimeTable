@@ -1180,7 +1180,7 @@ function changcolor(object, color) {
 }
 
 
-/*
+
 var setTime = {
     "등교": {
         "시작": 0825,
@@ -1219,7 +1219,9 @@ var setTime = {
         "끝": 1600
     }
 };
-*/
+
+
+/*
 var setTime = {
     "등교": {
         "시작": 0825,
@@ -1258,7 +1260,7 @@ var setTime = {
         "끝": 1520
     }
 };
-
+*/
 
 function ttsp(a, b) {
     var asddf = setTime[a][b];
